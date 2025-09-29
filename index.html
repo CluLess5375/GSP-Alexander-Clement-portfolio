@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>GSP TEST</title>
+</head>
+<body>
+    <header>
+        <h1>GSP TEST</h1>
+        <input type="search" placeholder="Zoek projecten">
+        <div class="meldingen">
+            <i class="fa-regular fa-bell"></i>
+        </div>
+        <div class="profiel">
+            <i class="fa-regular fa-user"></i>
+        </div>
+    </header>
+    <nav>
+        <div class="sidebar">
+            
+                <div onclick="location.href='#dashboard'">
+                    <i class="fa-solid fa-table-list"></i>
+                    Dashboard
+                </div>
+                <div onclick="location.href='#projecten'">
+                    <i class="fa-solid fa-folder-open"></i>
+                    Projecten
+                </div>
+                <div onclick="location.href='#logboek'">
+                    <i class="fa-solid fa-book"></i>
+                    Logboek
+                </div>
+                <div onclick="location.href='#tijdlijn'">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                    Tijdlijn
+                </div>
+                <div onclick="location.href='#uren-tracking'">
+                    <i class="fa-solid fa-clock"></i>
+                    Uren Tracking
+                </div>
+                <div onclick="location.href='#voortgang'">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    Voortgang
+                </div>
+                <div onclick="location.href='#instellingen'">
+                    <i class="fa-solid fa-gear"></i>
+                    Instellingen
+                </div>
+            
+        </div>
+    </nav>
+    <section id="dashboard" style="display: none;">
+        <div class="home">
+            <div class="welkom">
+                <h2>Welkom terug, Clement & Alexander !</h2>
+                <p>Hier is een overzicht van je activiteiten.</p>
+            </div>
+            <div class="projecten-container" style="display: flex;">
+                <div class="item">
+                    <span class="titel">Actieve Projecten</span>
+                    <span class="aantal">3</span>
+                    <span class="tijd">2 in voorbereiding</span>
+                </div>
+                <div class="item">
+                    <span class="titel">Totaal Uren</span>
+                    <span class="aantal">127</span>
+                    <span class="tijd">Deze week: 18u</span>
+                </div>
+                <div class="item">
+                    <span class="titel">Logboek Entries</span>
+                    <span class="aantal">45</span>
+                    <span class="tijd">Laatste entry vandaag</span>
+                </div>
+                <div class="item">
+                    <span class="titel">Gemiddelde Voortgang</span>
+                    <span class="aantal">67%</span>
+                    <span class="tijd">Op schema</span>
+                </div>
+            </div>
+            <div class="deadlines-container">
+                <span class="titel">Komende Deadlines</span>
+                <span class="info">Blijf op schema met je taken</span>
+                <div class="item">
+                    <span class="taak">Database schema finaliseren</span>
+                    <span class="tijd">Over 3 dagen</span>
+                </div>
+                <div class="item">
+                    <span class="taak">Frontend mockups reviewen</span>
+                    <span class="tijd">Over 5 dagen</span>
+                </div>
+                <div class="item">
+                    <span class="taak">API documentatie updaten</span>
+                    <span class="tijd">Over 1 week</span>
+                </div>
+            </div>
+            <div class="overzicht-container">
+                <span class="titel">Team Uren Overzicht</span>
+                <span class="info">Totaal gewerkte uren per teamlid</span>
+                <div class="item-container" style="display:flex">
+                    <div class="item">
+                        <span class="naam-teamlid">Clément Vercauteren</span>
+                        <span class="tijd">65h</span>
+                    </div>
+                    <div class="item">
+                        <span class="naam-teamlid">Alexander Brands</span>
+                        <span class="tijd">71h</span>
+                    </div>
+                </div>
+                <span class="totale-tijd">Totaal Team - 136h</span>
+            </div>
+        </div>
+    </section>
+    <section id="projecten" style="display: none;">
+        <div class="home">
+            <div class="welkom">
+                <h2>Mijn Projecten</h2>
+                <p>Beheer en organiseer je eindwerk projecten</p>
+                <div class="nieuw-project-btn">
+                    + Nieuw Project
+                </div>
+            </div>
+            <div class="project-container">
+                <div class="item">
+                    <span class="titel">E-commerce Platform</span>
+                    <span class="voortgang">In Progress</span><br>
+                    <span class="info">Full-stack webapplicatie met React, Node.js en PostgreSQL</span><br>
+                    <span class="info"><span class="categorie"><i class="fa-solid fa-folder-open"></i> Full-stack Development</span><span class="datum"><i class="fa-solid fa-calendar"></i> 15/12/'24</span><span class="uren"><i class="fa-solid fa-clock"></i> 89 uren</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="logboek" style="display: none;"></section>
+    <section id="tijdlijn" style="display: none;"></section>
+    <section id="uren-tracking" style="display: none;"></section>
+    <section id="voortgang" style="display: none;"></section>
+    <section id="instellingen" style="display: none;"></section>
+    <script>
+    
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(sec => sec.style.display = 'none');
+        const active = document.getElementById(sectionId);
+        if (active) {
+            active.style.display = '';
+            // Scroll naar boven bij wissel
+            window.scrollTo({ top: 0, behavior: 'auto' });
+        }
+    }
+
+    
+    document.querySelectorAll('.sidebar div').forEach(div => {
+        div.addEventListener('click', function() {
+            const text = this.textContent.trim().toLowerCase();
+            if (text.includes('dashboard')) {
+                showSection('dashboard');
+            } else if (text.includes('projecten')) {
+                showSection('projecten');
+            }
+            else if (text.includes('logboek')) {
+                showSection('logboek');
+            } else if (text.includes('tijdlijn')) {
+                showSection('tijdlijn');
+            } else if (text.includes('uren tracking')) {
+                showSection('uren-tracking');
+            } else if (text.includes('voortgang')) {
+                showSection('voortgang');
+            } else if (text.includes('instellingen')) {
+                showSection('instellingen');
+            }
+        });
+    });
+
+    showSection('dashboard');
+    </script>
+</body>
+</html>
