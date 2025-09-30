@@ -119,20 +119,61 @@
                 <h2>Mijn Projecten</h2>
                 <p>Beheer en organiseer je eindwerk projecten</p>
                 <div class="nieuw-project-btn">
-                    + Nieuw Project
+                    <i class="fa-solid fa-plus"></i> Nieuw Project
                 </div>
             </div>
             <div class="project-container">
-                <div class="item">
+                <div class="item-container">
+                    <div class="item">
                     <span class="titel">E-commerce Platform</span>
-                    <span class="voortgang">In Progress</span><br>
-                    <span class="info">Full-stack webapplicatie met React, Node.js en PostgreSQL</span><br>
+                    <span class="voortgang">In Progress</span>
+                    <span class="info">Full-stack webapplicatie met React, Node.js en PostgreSQL</span>
                     <span class="info"><span class="categorie"><i class="fa-solid fa-folder-open"></i> Full-stack Development</span><span class="datum"><i class="fa-solid fa-calendar"></i> 15/12/'24</span><span class="uren"><i class="fa-solid fa-clock"></i> 89 uren</span></span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="logboek" style="display: none;"></section>
+    <section id="logboek" style="display: none;">
+        <div class="home">
+            <div class="welkom">
+                <h2>Logboek</h2>
+                <p>Registreer je dagelijkse werkzaamheden en uren</p>
+                <div class="nieuw-logboek-entry-btn">
+                    <i class="fa-solid fa-plus"></i> Nieuwe Entry
+                </div>
+            
+            </div>
+            <div class="logboek-search">
+                <h2>Filters</h2>
+                <div class="search-items">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" placeholder="Zoek in logboek...">
+                    <select name="select-project" id="select-project">
+                        <option disabled selected style="display: none;">Selecteer project</option>
+                    </select>
+                    <select name="categorie" id="categorie">
+                        <option disabled selected style="display: none;">Categorie</option>
+                        <option value="projectplan">Projectplan</option>
+                        <option value="design">Design en ontwerp</option>
+                        <option value="frontend">Frontend Development</option>
+                        <option value="backend">Backend Development</option>
+                        <option value="database">Database</option>
+                        <option value="testing">Testing</option>
+                        <option value="afwerking">Afwerking</option>
+                    </select>
+                </div>
+            </div>
+            <div class="logboek-container">
+                <span class="titel">Komende Deadlines</span>
+                <span class="info">Blijf op schema met je taken</span>
+                <div class="item">
+                    <span class="taak">Database schema finaliseren</span>
+                    <span class="tijd">Over 3 dagen</span>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="tijdlijn" style="display: none;"></section>
     <section id="uren-tracking" style="display: none;"></section>
     <section id="voortgang" style="display: none;"></section>

@@ -32,7 +32,8 @@ header input{
     height: 40px;
     border-radius: 8px;
     border: 1px solid grey;
-    margin-left: 800px;
+    position: absolute;
+    right: 300px;
     align-self: center;
     padding-left: 10px;
     flex-wrap: wrap;
@@ -42,9 +43,9 @@ header input{
     width: 60px;
     height: 60px;
     border-radius: 10px;
-    margin-left: 20px;
     align-self: center;
     display: flex;
+    position: absolute;
     justify-content: center;
     align-items: center;
     i{
@@ -54,6 +55,13 @@ header input{
     transition-duration: 0.5s;
     background-color: rgba(0, 0, 0, 0.350);
 }
+.profiel{
+    right: 220px;
+}
+.meldingen{
+    right: 150px;
+}
+
 .meldingen:hover, .profiel:hover{
     transition-duration: 0.5s;
     background-color: rgba(0, 0, 0, 0.550);
@@ -112,6 +120,17 @@ header input{
     width: calc(100vw - 220px);
     top:0;
 }
+#logboek{
+    margin-left: 220px;
+    margin-top: 0;
+    padding: 20px;
+    position: static;
+    min-height: 400px;
+    background: none;
+    background-color: black;
+    width: calc(100vw - 220px);
+    top:0;
+}
 #dashboard .home {
     width: 100%;
     height: 100%;
@@ -143,6 +162,22 @@ header input{
     
     position: static;
 }
+#logboek .home {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    min-height: 1000px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    margin-top: 80px;
+    position: static;
+}
 #dashboard .welkom{
     padding: 30px;
     border:0.5px solid white;
@@ -169,6 +204,48 @@ header input{
     color: white;
     p{
         color: rgb(170, 170, 170);
+    }
+}
+#logboek .welkom{
+    padding: 30px;
+    border:0.5px solid white;
+    border-radius: 10px;
+    background-color: rgb(24, 24, 24);
+    width: 100%;
+    height: auto;
+    align-self: center;
+    line-height: 40px;
+    color: white;
+    p{
+        color: rgb(170, 170, 170);
+    }
+}
+#logboek .logboek-search{
+    width: 100%;
+    margin-top: 30px;
+    height: auto;
+    align-self: center;
+    padding: 30px;
+    border:0.5px solid white;
+    border-radius: 10px;
+    background-color: rgb(219, 219, 219);
+
+    .search-items{
+        margin-top: 50px;
+        display: flex;
+        gap:20px;
+
+        
+    }
+    .search-items input, select{
+        height: 40px;
+        width: 200px;
+
+        
+    }
+    .search-items i{
+        align-self: center;
+        font-size: 24px;
     }
 }
 .projecten-container{
@@ -318,6 +395,48 @@ header input{
         }
     }
 }
+.logboek-container{
+    min-width: 100%;
+    height: 200px;
+    background-color: rgb(219, 219, 219);
+    border: 0.5px solid white;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 30px;
+    box-sizing: border-box;
+    align-items: flex-start;
+    align-content: center;
+    display: grid;
+    position: static;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .item{
+        display: grid;
+    }
+    .titel{
+        color: black;
+        font-weight: bold;
+        font-size: 30px;
+    }
+    .info{
+        color:rgb(107, 107, 107);
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    .item .taak{
+        color:black;
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .item .tijd{
+        color: rgb(107, 107, 107);
+        font-size: 14px;
+        margin-top: 5px;
+    }
+}
 #projecten{
     margin-top: 80px;
     padding: 22px;
@@ -330,14 +449,32 @@ header input{
 .nieuw-project-btn{
     width: 150px;
     height: 40px;
-    
     color: white;
     align-items: center;
     border-radius: 10px;
     text-align: center;
     font-weight: bold;
     justify-content: center;
-    margin-top: 40px;
+    right: 50px;
+    top:180px;
+    position: absolute;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    background-color: rgb(0, 119, 255);
+    
+}
+.nieuw-logboek-entry-btn{
+    width: 150px;
+    height: 40px;
+    color: white;
+    align-items: center;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    justify-content: center;
+    right: 50px;
+    top:180px;
+    position: absolute;
     cursor: pointer;
     transition-duration: 0.5s;
     background-color: rgb(0, 119, 255);
@@ -347,28 +484,56 @@ header input{
     background-color: rgb(0, 90, 194);
     transition-duration: 0.5s;
 }
+.nieuw-logboek-entry-btn:hover{
+    background-color: rgb(0, 90, 194);
+    transition-duration: 0.5s;
+}
 #projecten{
     display: inherit;
 }
 .project-container{
     width: 100%;
+    margin-top: 5px;
+    .item-container{
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+    }
     
 }
 .project-container .item{
     background-color:rgb(219, 219, 219);
     padding: 30px;
     width: 100%;
-    
+    display:grid;
+    width: 100%;
+    height: 400px;
+    background-color: rgb(219, 219, 219);
+    border: 0.5px solid white;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 30px;
+    box-sizing: border-box;
+    align-items: flex-start;
+    align-content: center;
+    position: static;
+    display: grid;
+    flex-wrap: wrap;
+    flex-direction: column;
     height: 400px;
     border:0.5px solid white;
     border-radius: 10px;
-    margin-top: 30px;
+    
     
 
     .titel{
         font-weight: bold;
         font-size: 30px;
         color: black;
+        
         
     }
     .voortgang{
@@ -380,6 +545,20 @@ header input{
         border-radius: 10px;
         padding: 10px;
         background-color: rgba(0, 0, 0, 0.411);
+    }
+    .info{
+        margin-top: 50px;
+
+        .datum, .uren{
+            margin-left: 50px;
+        }
+        .datum, .uren, .categorie{
+            font-size: 14px;
+            color: white;
+            background-color: black;
+            padding: 5px;
+            border-radius: 10px;
+        }
     }
     
 }
