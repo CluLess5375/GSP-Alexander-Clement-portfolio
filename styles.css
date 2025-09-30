@@ -240,7 +240,7 @@ header input{
     .search-items input, select{
         height: 40px;
         width: 200px;
-
+        border-radius: 8px;
         
     }
     .search-items i{
@@ -412,6 +412,34 @@ header input{
     flex-direction: column;
     justify-content: flex-start;
 
+    .action-buttons{
+        
+        margin-left: auto;
+        display: flex;
+        gap:10px;
+
+        .modify-btn, .delete-btn{
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.411);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition-duration: 0.5s;
+        }
+        .modify-btn{
+            color:rgb(0, 153, 255)
+        }
+        .delete-btn{
+            color:rgb(163, 0, 0)
+        }
+        .modify-btn:hover, .delete-btn:hover{
+            background-color: rgba(0, 0, 0, 0.700);
+            transition-duration: 0.5s;
+        }
+    }
     .item{
         display: grid;
     }
@@ -425,13 +453,18 @@ header input{
         font-size: 18px;
         margin-top: 10px;
     }
-    .item .taak{
+    .taak{
         color:black;
         font-weight: bold;
         font-size: 18px;
         margin-top: 20px;
     }
-    .item .tijd{
+    .tijd{
+        color: rgb(107, 107, 107);
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    .categorie{
         color: rgb(107, 107, 107);
         font-size: 14px;
         margin-top: 5px;
