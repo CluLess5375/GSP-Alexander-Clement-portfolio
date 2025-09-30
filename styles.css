@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Broken+Fax&family=Rubik+Doodle+Shadow&family=Rubik+Doodle+Triangles&family=Rubik+Glitch+Pop&family=Rubik+Lines&family=Rubik+Maps&family=Rubik+Pixels&family=Rubik+Scribble&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Sixtyfour&display=swap');
+/* Color pallet: https://coolors.co/014177-0f6865-88c8a7-035259-238d8f */
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: 300ms;
+    cursor: default;
 }
 body{
     font-family: sans-serif;
@@ -14,31 +20,39 @@ body::-webkit-scrollbar {
 header{
     width: 100%;
     height: 80px;
-    background: linear-gradient(rgb(255, 255, 255), rgb(148, 148, 148));
+    background: linear-gradient(#88C8A7, #0F6865);
     display: flex;
     position: fixed;
-    z-index: auto;
+    z-index: 10;
     top: 0;
 }
 header h1{
     margin-left: 200px;
     align-self: center;
-    color:rgb(0, 119, 255);
+    color:white;
     flex-wrap: wrap;
+    text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.550);
 
 }
 header input{
     width: 300px;
     height: 40px;
     border-radius: 8px;
-    border: 1px solid grey;
+    border: 1px solid white;
+    box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
+    color: white;
     position: absolute;
     right: 300px;
     align-self: center;
     padding-left: 10px;
     flex-wrap: wrap;
-    background: linear-gradient(rgb(255, 255, 255, 0.850), rgba(202, 202, 202, 0.85));
+    background: linear-gradient(#88C8A7, #0F6865);
 }
+header input::placeholder
+{
+    color: rgba(255, 255, 255, 0.6);
+}
+
 .profiel, .meldingen{
     width: 60px;
     height: 60px;
@@ -70,7 +84,7 @@ header input{
 .sidebar{
     width: 220px;
     height: 100vh;
-    background-color: rgb(230, 230, 230);
+    background: #0F6865;
     position: fixed;
     top: 80px;
     left: 0;
@@ -86,8 +100,10 @@ header input{
         margin-top: 10px;
         align-content: center;
         border-radius: 10px;
-        transition-duration: 0.5s;
+        transition-duration: 0.6s;
         background-color: transparent;
+        color: white;
+        text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.550);
 
         i{
             padding-right: 20px;
@@ -95,8 +111,11 @@ header input{
     }
     div:hover{
         cursor: pointer;
-        transition-duration: 0.5s;
-        background-color: rgba(0, 0, 0, 0.550);
+        transition-duration: 0.2s;
+        background-color: rgba(0, 0, 0, 0.20);
+        box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.550);
+        backdrop-filter: blur(5px);
     }
 }
 #dashboard{
@@ -106,8 +125,11 @@ header input{
     position: static;
     min-height: 400px;
     background: none;
-    background-color: black;
     width: calc(100vw - 220px);
+    background-image: url(Images/pexels-steve-29067691.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 #projecten{
     margin-left: 220px;
@@ -136,7 +158,6 @@ header input{
     height: 100%;
     background: transparent;
     min-height: 1000px;
-    border: 2px solid black;
     border-radius: 10px;
     box-sizing: border-box;
     display: flex;
@@ -167,7 +188,6 @@ header input{
     height: 100%;
     background: transparent;
     min-height: 1000px;
-    border: 2px solid black;
     border-radius: 10px;
     box-sizing: border-box;
     display: flex;
@@ -180,9 +200,13 @@ header input{
 }
 #dashboard .welkom{
     padding: 30px;
-    border:0.5px solid white;
-    border-radius: 10px;
-    background-color: rgb(24, 24, 24);
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     width: 100%;
     height: auto;
     align-self: center;
@@ -194,9 +218,13 @@ header input{
 }
 #projecten .welkom{
     padding: 30px;
-    border:0.5px solid white;
-    border-radius: 10px;
-    background-color: rgb(24, 24, 24);
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     width: 100%;
     height: auto;
     align-self: center;
@@ -208,9 +236,13 @@ header input{
 }
 #logboek .welkom{
     padding: 30px;
-    border:0.5px solid white;
-    border-radius: 10px;
-    background-color: rgb(24, 24, 24);
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     width: 100%;
     height: auto;
     align-self: center;
@@ -254,14 +286,18 @@ header input{
 }
 .projecten-container .item{
     width: 100%;
-    height: 200px;
-    background-color: rgb(219, 219, 219);
-    border: 0.5px solid white;
+    height: 200px;/* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     margin-top: 30px;
     padding: 30px;
     box-sizing: border-box;
-    color: black;
+    color: white;
     align-items: flex-start;
     align-content: center;
     display:grid;
@@ -271,27 +307,31 @@ header input{
     justify-content: flex-start;
 
     .titel{
-        color:black;
+        color:white;
         font-size: 18px;
     }
     .aantal{
-        color: black;
+        color: white;
         font-size: 30px;
         font-weight: bold;
         margin-top: 40px;
     }
     .tijd{
-        color:rgb(107, 107, 107);
+        color:rgb(59, 59, 59);
         font-size: 14px;
         margin-top: 5px;
     }
 }
 .deadlines-container{
     min-width: 100%;
-    height: 450px;
-    background-color: rgb(219, 219, 219);
-    border: 0.5px solid white;
-    border-radius: 10px;
+    height: 450px;/* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
     margin-top: 30px;
     padding: 30px;
     box-sizing: border-box;
@@ -307,23 +347,23 @@ header input{
         display: grid;
     }
     .titel{
-        color: black;
+        color: white;
         font-weight: bold;
         font-size: 30px;
     }
     .info{
-        color:rgb(107, 107, 107);
+        color:rgb(49, 49, 49);
         font-size: 18px;
         margin-top: 10px;
     }
     .item .taak{
-        color:black;
+        color:white;
         font-weight: bold;
         font-size: 18px;
         margin-top: 50px;
     }
     .item .tijd{
-        color: rgb(107, 107, 107);
+        color: rgb(49, 49, 49);
         font-size: 14px;
         margin-top: 5px;
     }
@@ -331,9 +371,13 @@ header input{
 .overzicht-container{
     width: 100%;
     height: 400px;
-    background-color: rgb(219, 219, 219);
-    border: 0.5px solid white;
-    border-radius: 10px;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     margin-top: 30px;
     padding: 30px;
     box-sizing: border-box;
@@ -345,17 +389,18 @@ header input{
     flex-direction: column;
 
     .totale-tijd{
+        color: white;
         font-weight: bold;
         margin-top: 50px;
         font-size: 20px;
     }
     .titel{
-        color:black;
+        color:white;
         font-weight: bold;
         font-size: 30px;
     }
     .info{
-        color:rgb(107, 107, 107);
+        color:rgb(49, 49, 49);
         font-size: 18px;
         margin-top: 10px;
     }
@@ -371,19 +416,29 @@ header input{
             padding: 20px;
             width: 40%;
             display: flex;
+            justify-content: space-between;
             height: 80px;
-            border:0.5px solid white;
-            border-radius: 10px;
             
         }
         .item:nth-child(1){
-            background-color: blue;
+            /* From https://css.glass */
+            background: rgba(0, 0, 255, 0.4);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 0, 255, 0.3);
         }
         .item:nth-child(2){
-            background-color: green;
+            /* From https://css.glass */
+            background: rgba(0, 255, 0, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 255, 0, 0.3);
         }
         .naam-teamlid{
-            padding-right: 500px;
             align-self: center;
             font-size: 18px;
             margin-left: 30px;
