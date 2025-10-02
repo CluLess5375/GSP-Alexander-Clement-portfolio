@@ -137,10 +137,13 @@ header input::placeholder
     padding: 20px;
     position: static;
     min-height: 400px;
-    background: none;
-    background-color: black;
     width: calc(100vw - 220px);
     top:0;
+    background-image: url(Images/pexels-steve-29067691.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background: none;
 }
 #logboek{
     margin-left: 220px;
@@ -149,7 +152,38 @@ header input::placeholder
     position: static;
     min-height: 400px;
     background: none;
-    background-color: black;
+    background-image: url(Images/pexels-steve-29067691.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: calc(100vw - 220px);
+    top:0;
+}
+#tijdlijn{
+    margin-left: 220px;
+    margin-top: 0;
+    padding: 20px;
+    position: static;
+    min-height: 400px;
+    background: none;
+    background-image: url(Images/pexels-steve-29067691.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: calc(100vw - 220px);
+    top:0;
+}
+#instellingen{
+    margin-left: 220px;
+    margin-top: 0;
+    padding: 20px;
+    position: static;
+    min-height: 400px;
+    background: none;
+    background-image: url(Images/pexels-steve-29067691.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
     width: calc(100vw - 220px);
     top:0;
 }
@@ -180,7 +214,6 @@ header input::placeholder
     align-items: flex-start;
     justify-content: flex-start;
     padding: 0;
-    
     position: static;
 }
 #logboek .home {
@@ -198,6 +231,37 @@ header input::placeholder
     margin-top: 80px;
     position: static;
 }
+#tijdlijn .home {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    min-height: 1000px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    margin-top: 80px;
+    position: static;
+}
+#instellingen .home {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    min-height: 1000px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    margin-top: 80px;
+    position: static;
+}
+
 #dashboard .welkom{
     padding: 30px;
     /* From https://css.glass */
@@ -219,12 +283,12 @@ header input::placeholder
 #projecten .welkom{
     padding: 30px;
     /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     width: 100%;
     height: auto;
     align-self: center;
@@ -237,12 +301,12 @@ header input::placeholder
 #logboek .welkom{
     padding: 30px;
     /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     width: 100%;
     height: auto;
     align-self: center;
@@ -258,9 +322,18 @@ header input::placeholder
     height: auto;
     align-self: center;
     padding: 30px;
-    border:0.5px solid white;
+    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
-    background-color: rgb(219, 219, 219);
+    
+    h2{
+        color:white;
+    }
 
     .search-items{
         margin-top: 50px;
@@ -272,7 +345,23 @@ header input::placeholder
     .search-items input, select{
         height: 40px;
         width: 200px;
+        background: rgba(0, 0, 0, 0.4);
         border-radius: 8px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        color: rgba(255, 255, 255, 0.6);
+        box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
+        
+    }
+    .search-items input::placeholder{
+            color: rgba(255, 255, 255, 0.6);
+            padding-left: 10px;
+        }
+    
+    .search-items select{
+        padding-left: 10px;
         
     }
     .search-items i{
@@ -453,8 +542,13 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 .logboek-container{
     min-width: 100%;
     height: 200px;
-    background-color: rgb(219, 219, 219);
-    border: 0.5px solid white;
+    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     margin-top: 30px;
     padding: 30px;
@@ -477,6 +571,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
             width: 40px;
             height: 40px;
             background-color: rgba(0, 0, 0, 0.411);
+            box-shadow: inset 3px 3px 3px rgba(41, 41, 41, 0.5);
             border-radius: 5px;
             display: flex;
             justify-content: center;
@@ -499,39 +594,34 @@ border: 1px solid rgba(255, 255, 255, 0.3);
         display: grid;
     }
     .titel{
-        color: black;
+        color: white;
         font-weight: bold;
         font-size: 30px;
     }
     .info{
-        color:rgb(107, 107, 107);
+        color:rgb(49, 49, 49);
         font-size: 18px;
         margin-top: 10px;
     }
-    .taak{
-        color:black;
-        font-weight: bold;
-        font-size: 18px;
-        margin-top: 20px;
-    }
-    .tijd{
-        color: rgb(107, 107, 107);
-        font-size: 14px;
+    
+    .tijd-datum{
+        color:rgb(49, 49, 49);
+        font-size: 16px;
         margin-top: 5px;
     }
     .categorie{
-        color: rgb(107, 107, 107);
+        color:rgb(49, 49, 49);
         font-size: 14px;
         margin-top: 5px;
     }
 }
 #projecten{
     margin-top: 80px;
-    padding: 22px;
+    padding: 20px;
     position: static;
     min-height: 400px;
-    background: none;
-    background-color: black;
+    
+    
     width: calc(100vw - 220px);
 }
 .nieuw-project-btn{
@@ -562,7 +652,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     justify-content: center;
     right: 50px;
     top:180px;
-    position: absolute;
+    
     cursor: pointer;
     transition-duration: 0.5s;
     background-color: rgb(0, 119, 255);
@@ -649,4 +739,12 @@ border: 1px solid rgba(255, 255, 255, 0.3);
         }
     }
     
+}
+#tijdlijn .home iframe{
+    width: 100%;
+    height: 1250px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    opacity: 0.9;
+    box-shadow: 3px 3px 3px rgba(110, 110, 110, 0.5);
 }
