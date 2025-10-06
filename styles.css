@@ -16,7 +16,7 @@ body{
     /* fonts voor de hele pagina + scrollen vastzetten */
     font-family: sans-serif;
     overflow-x: hidden;
-    height: 100vh;
+    min-height: 100vh;
 }
 body::-webkit-scrollbar {
     /* scrollbar van de pagina verstoppen */
