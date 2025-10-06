@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Honk&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Broken+Fax&family=Rubik+Doodle+Shadow&family=Rubik+Doodle+Triangles&family=Rubik+Glitch+Pop&family=Rubik+Lines&family=Rubik+Maps&family=Rubik+Pixels&family=Rubik+Scribble&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Sixtyfour&display=swap');
 /* Color pallet: https://coolors.co/014177-0f6865-88c8a7-035259-238d8f */
 
+/* we gebruiken 1 html met verschillende sections die standaard display none zijn
+maar bij activatie zichtbaar worden !*/
 
 *{
+    /* css reset */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,14 +13,18 @@
     cursor: default;
 }
 body{
+    /* fonts voor de hele pagina + scrollen vastzetten */
     font-family: sans-serif;
     overflow-x: hidden;
+    height: 100vh;
 }
 body::-webkit-scrollbar {
-  display: none;
+    /* scrollbar van de pagina verstoppen */
+    display: none;
 }
 
 header{
+    /* header van de pagina */
     width: 100%;
     height: 80px;
     background: linear-gradient(#88C8A7, #0F6865);
@@ -27,6 +34,7 @@ header{
     top: 0;
 }
 header h1{
+    /* header gsp tekst */
     margin-left: 200px;
     align-self: center;
     color:white;
@@ -34,7 +42,12 @@ header h1{
     text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.550);
 
 }
+section
+{
+    height: 100%;    
+}
 header input{
+    /* header zoekbalk */
     width: 300px;
     height: 40px;
     border-radius: 8px;
@@ -51,9 +64,11 @@ header input{
 header input::placeholder
 {
     color: rgba(255, 255, 255, 0.6);
+    /* placeholder voor de zoekbalk van header */
 }
 
 .profiel, .meldingen{
+    /* divs van profiel en meldingen op de header */
     width: 60px;
     height: 60px;
     border-radius: 10px;
@@ -65,21 +80,25 @@ header input::placeholder
     i{
         color: white;
         font-size: 24px;
+        /* icon van de divs */
     }
     transition-duration: 0.5s;
     background-color: rgba(0, 0, 0, 0.350);
 }
 .profiel{
     right: 220px;
+    /* position absolute margin-right */
 }
 .meldingen{
     right: 150px;
+    /* position absolute margin-right */
 }
 
 .meldingen:hover, .profiel:hover{
     transition-duration: 0.5s;
     background-color: rgba(0, 0, 0, 0.550);
     cursor: pointer;
+    /* hover voor de twee divs op de header */
 }
 .sidebar{
     width: 220px;
@@ -92,8 +111,10 @@ header input::placeholder
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    /* sidebar als navigatie */
 
     div{
+        /* div voor het navigeren naar een section */
         width: 100%;
         height: 50px;
         padding: 10px;
@@ -107,6 +128,7 @@ header input::placeholder
 
         i{
             padding-right: 20px;
+            /* icon voor die divs */
         }
     }
     div:hover{
@@ -116,6 +138,7 @@ header input::placeholder
         box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
         text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.550);
         backdrop-filter: blur(5px);
+        /* hover divs */
     }
 }
 #dashboard{
@@ -130,6 +153,7 @@ header input::placeholder
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+    /* section dashboard */
 }
 #projecten{
     margin-left: 220px;
@@ -137,10 +161,13 @@ header input::placeholder
     padding: 20px;
     position: static;
     min-height: 400px;
-    background: none;
-    background-color: black;
     width: calc(100vw - 220px);
     top:0;
+    background-image: url(Images/pexels-steve-29067691.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    /* section projecten */
 }
 #logboek{
     margin-left: 220px;
@@ -149,9 +176,73 @@ header input::placeholder
     position: static;
     min-height: 400px;
     background: none;
-    background-color: black;
+    background-image: url(Images/pexels-steve-29067691.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
     width: calc(100vw - 220px);
     top:0;
+    /* section logboek */
+}
+#tijdlijn{
+    margin-left: 220px;
+    margin-top: 0;
+    padding: 20px;
+    position: static;
+    min-height: 400px;
+    background: none;
+    background-image: url(Images/pexels-steve-29067691.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: calc(100vw - 220px);
+    top:0;
+    /* section tijdlijn */
+}
+#instellingen{
+    margin-left: 220px;
+    margin-top: 0;
+    padding: 20px;
+    position: static;
+    min-height: 400px;
+    background: none;
+    background-image: url(Images/pexels-steve-29067691.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: calc(100vw - 220px);
+    top:0;
+    /* section instellingen */
+}
+#voortgang{
+    margin-left: 220px;
+    margin-top: 0;
+    padding: 20px;
+    position: static;
+    min-height: 400px;
+    background: none;
+    background-image: url(Images/pexels-steve-29067691.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: calc(100vw - 220px);
+    top:0;
+    /* section voortgang */
+}
+#uren-tracking{
+    margin-left: 220px;
+    margin-top: 0;
+    padding: 20px;
+    position: static;
+    min-height: 400px;
+    background: none;
+    background-image: url(Images/pexels-steve-29067691.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: calc(100vw - 220px);
+    top:0;
+    /* section uren-tracking */
 }
 #dashboard .home {
     width: 100%;
@@ -167,6 +258,7 @@ header input::placeholder
     padding: 0;
     margin-top: 80px;
     position: static;
+    /* aparte div dat juist tussen header en sidebar komt */
 }
 #projecten .home {
     width: 100%;
@@ -180,8 +272,8 @@ header input::placeholder
     align-items: flex-start;
     justify-content: flex-start;
     padding: 0;
-    
     position: static;
+    /* aparte div dat juist tussen header en sidebar komt */
 }
 #logboek .home {
     width: 100%;
@@ -197,8 +289,73 @@ header input::placeholder
     padding: 0;
     margin-top: 80px;
     position: static;
+    /* aparte div dat juist tussen header en sidebar komt */
+}
+#tijdlijn .home {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    margin-top: 80px;
+    position: static;
+    /* aparte div dat juist tussen header en sidebar komt */
+}
+#instellingen .home {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    min-height: 1000px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    margin-top: 80px;
+    position: static;
+    /* aparte div dat juist tussen header en sidebar komt */
+}
+#voortgang .home {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    min-height: 1000px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    margin-top: 80px;
+    position: static;
+    /* aparte div dat juist tussen header en sidebar komt */
+}
+#uren-tracking .home {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    min-height: 1000px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    margin-top: 80px;
+    position: static;
+    /* aparte div dat juist tussen header en sidebar komt */
 }
 #dashboard .welkom{
+    /* titel en beschrijving voor elke section */
     padding: 30px;
     /* From https://css.glass */
     background: rgba(0, 0, 0, 0.4);
@@ -214,17 +371,19 @@ header input::placeholder
     color: white;
     p{
         color: rgb(170, 170, 170);
+        /* beschrijvingstekst */
     }
 }
 #projecten .welkom{
+    /* titel en beschrijving voor elke section */
     padding: 30px;
     /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     width: 100%;
     height: auto;
     align-self: center;
@@ -232,17 +391,19 @@ header input::placeholder
     color: white;
     p{
         color: rgb(170, 170, 170);
+        /* beschrijvingstekst */
     }
 }
 #logboek .welkom{
+    /* titel en beschrijving voor elke section */
     padding: 30px;
     /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     width: 100%;
     height: auto;
     align-self: center;
@@ -250,49 +411,222 @@ header input::placeholder
     color: white;
     p{
         color: rgb(170, 170, 170);
+        /* beschrijvingstekst */
     }
 }
+#voortgang .welkom{
+    /* titel en beschrijving voor elke section */
+    padding: 30px;
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: auto;
+    align-self: center;
+    line-height: 40px;
+    color: white;
+    p{
+        color: rgb(170, 170, 170);
+        /* beschrijvingstekst */
+    }
+}
+#uren-tracking .welkom{
+    /* titel en beschrijving voor elke section */
+    padding: 30px;
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: auto;
+    align-self: center;
+    line-height: 40px;
+    color: white;
+    p{
+        color: rgb(170, 170, 170);
+        /* beschrijvingstekst */
+    }
+}
+#voortgang .voortgang-container{
+    /* container voor de items van voortgang */
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding: 30px;
+    /* From https://css.glass */
+    background: rgba(197, 197, 197, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+
+    .info{
+        padding-bottom: 20px;
+        /* info onder titel van container */
+    }
+}
+#voortgang .status-container{
+    /* container onder voortgang-container (statussen) */
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+    display: flex;
+    padding: 30px;
+    /* From https://css.glass */
+    background: rgba(197, 197, 197, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+#voortgang .voortgang-container .item{
+    /* een item in de voortgang-container */
+    width: 100%;
+    padding: 30px;
+    margin-top: 20px;
+    /* From https://css.glass */
+    background: rgba(233, 233, 233, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+
+    .titel{
+        /* titel van het item */
+        font-weight: bold;
+        font-size: 24px;
+        color: black;
+    }
+    .categorie{
+        /* de categorie van het item */
+        margin-top: 10px;
+        font-size: 18px;
+        color: rgb(59, 59, 59);
+    }
+    .deadline{
+        /* deadline van het item */
+        margin-top: 20px;
+        font-size: 14px;
+        color: rgb(59, 59, 59);
+    }
+}
+#voortgang .voortgang-container .item:hover{
+    background-color: rgba(95, 95, 95, 0.1);
+    /* hover voor het item */
+}
+#voortgang .status-container .voltooid, .bezig, .onvoltooid{
+    /* items van de status-container */
+    width: 100%;
+    padding: 30px;
+    margin-top: 20px;
+    /* From https://css.glass */
+    background: rgba(233, 233, 233, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+
+    .titel{
+        /* titeltekst item status-container */
+        font-weight: bold;
+        font-size: 20px;
+        color: black;
+    }
+    .aantal{
+        /* aantaltekst item status-container */
+        margin-top: 10px;
+        font-size: 30px;
+        color: rgb(59, 59, 59);
+        font-weight: bold;
+    
+}
+}
 #logboek .logboek-search{
+    /* logboek section search div */
     width: 100%;
     margin-top: 30px;
     height: auto;
     align-self: center;
     padding: 30px;
-    border:0.5px solid white;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
-    background-color: rgb(219, 219, 219);
+    
+    h2{
+        color:white;
+        /* "Filters" tekst */
+    }
 
     .search-items{
         margin-top: 50px;
         display: flex;
         gap:20px;
+        /* select, input en icon van search div */
 
         
     }
     .search-items input, select{
         height: 40px;
         width: 200px;
+        background: rgba(0, 0, 0, 0.4);
         border-radius: 8px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        color: rgba(255, 255, 255, 0.6);
+        box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
+        /* enkel input en select van de search div */
+        
+    }
+    .search-items input::placeholder{
+            color: rgba(255, 255, 255, 0.6);
+            padding-left: 10px;
+            /* placeholder styles van input */
+        }
+    
+    .search-items select{
+        padding-left: 10px;
+        /* select styles */
         
     }
     .search-items i{
         align-self: center;
         font-size: 24px;
+        /* vergrootglas icon */
     }
 }
 .projecten-container{
     gap:15px;
     width: 100%;
+    /* projecten-container op #dashboard on de welkom div */
 }
 .projecten-container .item{
+    /* een item van de projecten-container op #dashboard */
     width: 100%;
     height: 200px;/* From https://css.glass */
-background: rgba(255, 255, 255, 0.2);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     margin-top: 30px;
     padding: 30px;
@@ -309,29 +643,140 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     .titel{
         color:white;
         font-size: 18px;
+        /* titeltekst item */
     }
     .aantal{
         color: white;
         font-size: 30px;
         font-weight: bold;
         margin-top: 40px;
+        /* aantaltekst item */
     }
     .tijd{
         color:rgb(59, 59, 59);
         font-size: 14px;
         margin-top: 5px;
+        /* tijdtekst item */
+    }
+}
+.uren-container .item{
+    /* item van de uren-container onder de welkom op #uren-tracking */
+    padding: 30px;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 400px;
+    
+    .icon{
+        position: absolute;
+        right: 30px;
+        top:30px;
+        color: white;
+        font-size: 20px;
+        /* position absolute icon in item */
+    }
+    .titel{
+        font-size: 20px;
+        /* titeltekst item */
+    }
+    .uren{
+        font-weight: bold;
+        font-size: 24px;
+        margin-top: 10px;
+        /* urentekst item */
+    }
+    .bottom-text{
+        font-size: 16px;
+        margin-top: 15px;
+        /* onderste tekst item */
+    }
+}
+.uren-container{
+    /* uren-container van #uren-tracking */
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    height: auto;
+    gap: 20px;
+    justify-content: space-between;
+}
+.uren-entries-container{
+    /* uren-entries-container van #uren-tracking */
+    padding: 30px;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 30px;
+    width: 100%;
+    height: auto;
+
+    .item{
+        /* een item van uren entries */
+        padding: 20px;
+        margin-top: 20px;
+        /* From https://css.glass */
+        background: rgba(233, 233, 233, 0.4);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(0, 0, 0, 0.3);
+
+        .naam-persoon{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 16px;
+            /* naam persoon tekst item */
+        }
+        .uren{
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            /* urentekst item */
+        }
+        .titel{
+            font-size: 20px;
+            font-weight: bold;
+            /* titeltekst item */
+        }
+        .info{
+            font-size: 18px;
+            margin-top: 10px;
+            /* infotekst item */
+        }
+        .datum{
+            font-size: 16px;
+            margin-top: 15px;
+            /* datumtekst item */
+        }
+    }
+    .item:hover{
+        background-color: rgba(95, 95, 95, 0.1);
+        /* hover voor item */
     }
 }
 .deadlines-container{
+    /* deadlines-container onder projecten-container op #dashboard */
     min-width: 100%;
     height: 450px;/* From https://css.glass */
     background: rgba(255, 255, 255, 0.2);
-background: rgba(255, 255, 255, 0.2);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     margin-top: 30px;
     padding: 30px;
     box-sizing: border-box;
@@ -345,30 +790,36 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 
     .item{
         display: grid;
+        /* item van deadlines-container op #dashboard */
     }
     .titel{
         color: white;
         font-weight: bold;
         font-size: 30px;
+        /* titeltekst deadlines-container */
     }
     .info{
         color:rgb(49, 49, 49);
         font-size: 18px;
         margin-top: 10px;
+        /* infotekst deadlines-container */
     }
     .item .taak{
         color:white;
         font-weight: bold;
         font-size: 18px;
         margin-top: 50px;
+        /* taaktekst deadlines-container */
     }
     .item .tijd{
         color: rgb(49, 49, 49);
         font-size: 14px;
         margin-top: 5px;
+        /* tijd onder taaktekst */
     }
 }
 .overzicht-container{
+    /* overzicht-container onder deadlines-container op #dashboard */
     width: 100%;
     height: 400px;
     /* From https://css.glass */
@@ -393,16 +844,19 @@ border: 1px solid rgba(255, 255, 255, 0.3);
         font-weight: bold;
         margin-top: 50px;
         font-size: 20px;
+        /* totale tijd tekst */
     }
     .titel{
         color:white;
         font-weight: bold;
         font-size: 30px;
+        /* titeltekst */
     }
     .info{
         color:rgb(49, 49, 49);
         font-size: 18px;
         margin-top: 10px;
+        /* infotekst */
     }
     .item-container{
         width: 100%;
@@ -418,7 +872,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
             display: flex;
             justify-content: space-between;
             height: 80px;
-            
+            /* een item van de overzicht-container display flex */
         }
         .item:nth-child(1){
             /* From https://css.glass */
@@ -428,6 +882,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
             border: 1px solid rgba(0, 0, 255, 0.3);
+            /* eerste item (blauw) */
         }
         .item:nth-child(2){
             /* From https://css.glass */
@@ -437,24 +892,32 @@ border: 1px solid rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
             border: 1px solid rgba(0, 255, 0, 0.3);
+            /* tweede item (groen) */
         }
         .naam-teamlid{
             align-self: center;
             font-size: 18px;
             margin-left: 30px;
+            /* naam teamlid tekst van in het item */
         }
         .tijd{
             font-weight: bold;
             align-self: center;
             font-size: 26px;
+            /* tijd tekst van in het item */
         }
     }
 }
 .logboek-container{
+    /* container onder search-container op #logboek */
     min-width: 100%;
     height: 200px;
-    background-color: rgb(219, 219, 219);
-    border: 0.5px solid white;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     margin-top: 30px;
     padding: 30px;
@@ -468,15 +931,17 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     justify-content: flex-start;
 
     .action-buttons{
-        
+        /* de modify en delete (container) button van een item op #logboek */
         margin-left: auto;
         display: flex;
         gap:10px;
 
         .modify-btn, .delete-btn{
+            /* de buttons apart zelf */
             width: 40px;
             height: 40px;
             background-color: rgba(0, 0, 0, 0.411);
+            box-shadow: inset 3px 3px 3px rgba(41, 41, 41, 0.5);
             border-radius: 5px;
             display: flex;
             justify-content: center;
@@ -486,55 +951,59 @@ border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .modify-btn{
             color:rgb(0, 153, 255)
+            /* kleur icon modify button */
         }
         .delete-btn{
             color:rgb(163, 0, 0)
+            /* kleur icon delete button */
         }
         .modify-btn:hover, .delete-btn:hover{
             background-color: rgba(0, 0, 0, 0.700);
             transition-duration: 0.5s;
+            /* hover voor de twee buttons */
         }
     }
     .item{
         display: grid;
+        /* display grid voor een item */
     }
     .titel{
-        color: black;
+        color: white;
         font-weight: bold;
         font-size: 30px;
+        /* titeltekst item */
     }
     .info{
-        color:rgb(107, 107, 107);
+        color:rgb(49, 49, 49);
         font-size: 18px;
         margin-top: 10px;
+        /* infotekst item */
     }
-    .taak{
-        color:black;
-        font-weight: bold;
-        font-size: 18px;
-        margin-top: 20px;
-    }
-    .tijd{
-        color: rgb(107, 107, 107);
-        font-size: 14px;
+    
+    .tijd-datum{
+        color:rgb(49, 49, 49);
+        font-size: 16px;
         margin-top: 5px;
+        /* tijd en datum tekst item */
     }
     .categorie{
-        color: rgb(107, 107, 107);
+        color:rgb(49, 49, 49);
         font-size: 14px;
         margin-top: 5px;
+        /* de categorie van item */
     }
 }
 #projecten{
     margin-top: 80px;
-    padding: 22px;
+    padding: 20px;
     position: static;
     min-height: 400px;
-    background: none;
-    background-color: black;
     width: calc(100vw - 220px);
+    /* section #projecten instellen tussen header en sidebar */
+    /* margin top onder de header, anders komt deze section door de header */
 }
 .nieuw-project-btn{
+    /* nieuw project button in welkom op #projecten */
     width: 150px;
     height: 40px;
     color: white;
@@ -545,13 +1014,29 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     justify-content: center;
     right: 50px;
     top:180px;
-    position: absolute;
     cursor: pointer;
     transition-duration: 0.5s;
     background-color: rgb(0, 119, 255);
-    
+}
+.voortgang-nieuw-project-btn{
+    /* nieuw project button in welkom op #voortgang */
+    width: 150px;
+    height: 40px;
+    color: white;
+    align-items: center;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    justify-content: center;
+    right: 50px;
+    line-height: 40px;
+    top:180px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    background-color: rgb(0, 119, 255);
 }
 .nieuw-logboek-entry-btn{
+    /* nieuwe entry button in welkom op #logboek */
     width: 150px;
     height: 40px;
     color: white;
@@ -562,24 +1047,28 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     justify-content: center;
     right: 50px;
     top:180px;
-    position: absolute;
     cursor: pointer;
     transition-duration: 0.5s;
     background-color: rgb(0, 119, 255);
     
 }
 .nieuw-project-btn:hover{
+    /* hover van de nieuw project button op #projecten */
+    background-color: rgb(0, 90, 194);
+    transition-duration: 0.5s;
+}
+.voortgang-nieuw-project-btn:hover{
+    /* hover van de nieuw project button op #voortgang */
     background-color: rgb(0, 90, 194);
     transition-duration: 0.5s;
 }
 .nieuw-logboek-entry-btn:hover{
+    /* hover van de nieuwe entry button op #logboek */
     background-color: rgb(0, 90, 194);
     transition-duration: 0.5s;
 }
-#projecten{
-    display: inherit;
-}
 .project-container{
+    /* projecten-container onder de welkom op #projecten */
     width: 100%;
     margin-top: 5px;
     .item-container{
@@ -593,36 +1082,30 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     
 }
 .project-container .item{
-    background-color:rgb(219, 219, 219);
+    /* item van project-container op #projecten */
     padding: 30px;
     width: 100%;
-    display:grid;
-    width: 100%;
-    height: 400px;
-    background-color: rgb(219, 219, 219);
-    border: 0.5px solid white;
-    border-radius: 10px;
     margin-top: 30px;
-    padding: 30px;
     box-sizing: border-box;
     align-items: flex-start;
     align-content: center;
     position: static;
-    display: grid;
     flex-wrap: wrap;
     flex-direction: column;
-    height: 400px;
-    border:0.5px solid white;
-    border-radius: 10px;
+    height: auto;
+    /* From https://css.glass */
+    background: rgba(197, 197, 197, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     
-    
-
     .titel{
         font-weight: bold;
         font-size: 30px;
         color: black;
-        
-        
+        /* titeltekst item */
     }
     .voortgang{
         position: absolute;
@@ -631,22 +1114,134 @@ border: 1px solid rgba(255, 255, 255, 0.3);
         font-weight: bold;
         color:white;
         border-radius: 10px;
-        padding: 10px;
+        padding: 10px 15px 10px 15px;
         background-color: rgba(0, 0, 0, 0.411);
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        /* position absolute voortgang div rechts in het item */
+    }
+    .voortgang-text{
+        margin-top: 40px;
+        font-size: 16px;
+        /* voortgangtekst boven de progressbar */
+    }
+    .tech-text{
+        margin-top: 40px;
+        /* technologieëntekst onder de progressbar */
+    }
+    .progressbar-value{
+        position: absolute;
+        right: 30px;
+        /* valuetekst van de progressbar */
+    }
+    .project-voortgang-progressbar{
+        width: 100%;
+        height: 20px;
+        margin-top: 5px;
+        /* de progressbar van item */
     }
     .info{
-        margin-top: 50px;
+        margin-top: 30px;
+        /* infotekst onder de titel van item */
 
         .datum, .uren{
-            margin-left: 50px;
+            margin-left: 40px;
+            /* gap maken tussen deze item onder de infotekst */
         }
         .datum, .uren, .categorie{
             font-size: 14px;
             color: white;
-            background-color: black;
-            padding: 5px;
+            background-color: rgba(0, 0, 0, 0.411);
+            padding: 5px 10px 5px 10px;
             border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            /* items onder infotekst */
         }
+    }
+    .technologieën{
+        margin-top: 10px;
+        font-weight: bold;
+        /* technologieën tekst (container) */
+
+        .technologie{
+            font-weight: bold;
+            font-size: 14px;
+            color:white;
+            background-color: rgba(0, 0, 0, 0.411);
+            padding: 5px 10px 5px 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            /* een technologie item */
+        }
+    }
+    .cloudfiles-text{
+        margin-top: 20px;
+        font-weight: bold;
+        /* cloud bestanden tekst */
+    }
+    .cloudfiles-btn-container{
+        display: flex;
+        gap:10px;
+        /* button-container onder cloud bestanden tekst */
+
+        .item{
+            padding: 10px 11px 10px 11px;
+            color: rgb(63, 63, 63);
+            width: 200px;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            /* div als button */
+        }
+        .item:hover{
+            transition-duration: 0.5s;
+            background-color: rgba(0, 0, 0, 0.411);
+            color: white;
+            /* hover voor div */
+        }
+        /* hiertussen zit een hr tag met 1px heigt en color solid black */
+    }
+    .bottom-text{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+        color: white;
+        margin-top: 20px;
+        /* onderste tekst van het item */
+    }
+    
+    .open-project-btn{
+        /* open project button rechts beneden in het item */
+        position: absolute;
+        right: 30px;
+        bottom: 20px;
+        padding: 10px 11px 10px 11px;
+        color: rgb(46, 46, 46);
+        width: 200px;
+        background: rgba(199, 199, 199, 0.4);
+        text-align: center;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .open-project-btn:hover{
+        transition-duration: 0.5s;
+        background-color: rgba(0, 0, 0, 0.411);
+        color: white;
+        /* hover van die button */
     }
     
 }
+#tijdlijn .home iframe{
+    width: 100%;
+    height: 85vh;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    opacity: 0.9;
+    box-shadow: 3px 3px 3px rgba(110, 110, 110, 0.5);
+    /* iframe styles voor de iframe tag op #tijdlijn */
+}
+
