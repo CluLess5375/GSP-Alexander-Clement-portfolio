@@ -16,6 +16,7 @@ body{
     /* fonts voor de hele pagina + scrollen vastzetten */
     font-family: sans-serif;
     overflow-x: hidden;
+    height: 100vh;
 }
 body::-webkit-scrollbar {
     /* scrollbar van de pagina verstoppen */
@@ -40,6 +41,10 @@ header h1{
     flex-wrap: wrap;
     text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.550);
 
+}
+section
+{
+    height: 100%;    
 }
 header input{
     /* header zoekbalk */
@@ -290,7 +295,6 @@ header input::placeholder
     width: 100%;
     height: 100%;
     background: transparent;
-    min-height: 1000px;
     border-radius: 10px;
     box-sizing: border-box;
     display: flex;
@@ -1233,7 +1237,7 @@ header input::placeholder
 }
 #tijdlijn .home iframe{
     width: 100%;
-    height: 1250px;
+    height: 85vh;
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     opacity: 0.9;
