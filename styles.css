@@ -172,7 +172,22 @@ header input::placeholder
     background-size: cover;
     /* section projecten */
 }
-#logboek{
+#logboek-clement{
+    margin-left: 220px;
+    margin-top: 0;
+    padding: 20px;
+    position: static;
+    min-height: 400px;
+    background: none;
+    background-image: url(Images/pexels-steve-29067691.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: calc(100vw - 220px);
+    top:0;
+    /* section logboek */
+}
+#logboek-brands{
     margin-left: 220px;
     margin-top: 0;
     padding: 20px;
@@ -278,7 +293,23 @@ header input::placeholder
     position: static;
     /* aparte div dat juist tussen header en sidebar komt */
 }
-#logboek .home {
+#logboek-clement .home {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    min-height: 1000px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    margin-top: 80px;
+    position: static;
+    /* aparte div dat juist tussen header en sidebar komt */
+}
+#logboek-brands .home {
     width: 100%;
     height: 100%;
     background: transparent;
@@ -397,7 +428,27 @@ header input::placeholder
         /* beschrijvingstekst */
     }
 }
-#logboek .welkom{
+#logboek-clement .welkom{
+    /* titel en beschrijving voor elke section */
+    padding: 30px;
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: auto;
+    align-self: center;
+    line-height: 40px;
+    color: white;
+    p{
+        color: rgb(170, 170, 170);
+        /* beschrijvingstekst */
+    }
+}
+#logboek-brands .welkom{
     /* titel en beschrijving voor elke section */
     padding: 30px;
     /* From https://css.glass */
@@ -556,7 +607,66 @@ header input::placeholder
     
 }
 }
-#logboek .logboek-search{
+#logboek-clement .logboek-search{
+    /* logboek section search div */
+    width: 100%;
+    margin-top: 30px;
+    height: auto;
+    align-self: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    
+    h2{
+        color:white;
+        /* "Filters" tekst */
+    }
+
+    .search-items{
+        margin-top: 50px;
+        display: flex;
+        gap:20px;
+        /* select, input en icon van search div */
+
+        
+    }
+    .search-items input, select{
+        height: 40px;
+        width: 200px;
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 8px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        color: rgba(255, 255, 255, 0.6);
+        box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
+        /* enkel input en select van de search div */
+        
+    }
+    .search-items input::placeholder{
+            color: rgba(255, 255, 255, 0.6);
+            padding-left: 10px;
+            /* placeholder styles van input */
+        }
+    
+    .search-items select{
+        padding-left: 10px;
+        /* select styles */
+        
+    }
+    .search-items i{
+        align-self: center;
+        font-size: 24px;
+        /* vergrootglas icon */
+    }
+}
+#logboek-brands .logboek-search{
     /* logboek section search div */
     width: 100%;
     margin-top: 30px;
