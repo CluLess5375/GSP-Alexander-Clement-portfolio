@@ -67,7 +67,7 @@ header input::placeholder
     /* placeholder voor de zoekbalk van header */
 }
 
-.profiel, .meldingen{
+.profiel, .meldingen, .github{
     /* divs van profiel en meldingen op de header */
     width: 60px;
     height: 60px;
@@ -93,8 +93,11 @@ header input::placeholder
     right: 150px;
     /* position absolute margin-right */
 }
+.github{
+    right: 80px;
+}
 
-.meldingen:hover, .profiel:hover{
+.meldingen:hover, .profiel:hover, .github:hover{
     transition-duration: 0.5s;
     background-color: rgba(0, 0, 0, 0.550);
     cursor: pointer;
