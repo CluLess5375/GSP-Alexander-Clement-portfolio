@@ -1359,3 +1359,10 @@ header input::placeholder
     /* iframe styles voor de iframe tag op #tijdlijn */
 }
 
+.projectDef
+{
+    margin-bottom: 8px;
+    padding-right: 8px;
+    max-height: 100px;
+    overflow-y: auto;
+}
