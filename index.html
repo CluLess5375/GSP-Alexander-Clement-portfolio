@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>GSP '25 - '26</title>
 </head>
-<body>
+<body onload="laadPagina()">
     <header>
         <div class="header-icon">
             <i class="fa-solid fa-circle-nodes"></i>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="item">
                     <span class="titel">Totaal Uren</span>
-                    <span class="aantal">30</span>
+                    <span class="aantal" id="totaleUren-Dashboard-Card">30</span>
                     <span class="tijd">Deze week: 18u</span>
                 </div>
                 <div class="item">
@@ -118,14 +118,14 @@
                 <div class="item-container" style="display:flex">
                     <div class="item">
                         <span class="naam">Clement</span>
-                        <span class="tijd">18h</span>
+                        <span class="tijd tijd-dashboard" id="urenClement">18</span>
                     </div>
                     <div class="item">
                         <span class="naam">Alexander</span>
-                        <span class="tijd">12h</span>
+                        <span class="tijd tijd-dashboard" id="urenAlexander">12</span>
                     </div>
                 </div>
-                <span class="totale-tijd">Totaal Team - 30h</span>
+                <span class="totale-tijd" id="totaleUren-Dashboard">30</span>
             </div>
         </div>
     </section>
@@ -796,5 +796,6 @@
 
     showSection('dashboard');
     </script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1348,6 +1348,8 @@ header input::placeholder
         /* onderste tekst van het item */
     }
     
+
+    
     .open-project-btn{
         /* open project button rechts beneden in het item */
         position: absolute;
@@ -1389,4 +1391,13 @@ header input::placeholder
     padding-right: 8px;
     max-height: 100px;
     overflow-y: auto;
+}
+
+.tijd-dashboard::after
+{
+    content: "u";
+}
+#totaleUren-Dashboard::before
+{
+    content: "Totaal Team - ";
 }
