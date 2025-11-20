@@ -13,5 +13,6 @@ function totaalUren() {
 
     document.getElementById("totaleUren-Dashboard").innerText = totaal + "u";
     document.getElementById("totaleUren-Dashboard-Card").innerText = totaal + "u";
+    document.getElementById("totaleUren-Uren-Tracking").innerText = totaal + "u";
     console.log("Totaal aantal uren: " + totaal);
 }
