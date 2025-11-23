@@ -12,8 +12,8 @@
         <div class="header-icon">
             <i class="fa-solid fa-circle-nodes"></i>
         </div>
-        <h1>GDPR TEST</h1>
-        <input type="search" placeholder="Zoek projecten">
+        <h1>GSP 2025 - 2026</h1>
+        <input id="zoek-projecten" type="search" placeholder="Zoek projecten" aria-label="Zoek projecten">
         <div class="meldingen">
             <i class="fa-regular fa-bell" style="cursor: pointer;"></i>
         </div>
@@ -91,8 +91,8 @@
                     <span class="tijd">Laatste entry vandaag</span>
                 </div>
                 <div class="item">
-                    <span class="titel">Gemiddelde Voortgang</span>
-                    <span class="aantal">67%</span>
+                    <span class="titel">Percentage Uren / Lid</span>
+                    <span class="aantal"><span style="color: rgb(154, 154, 233);" id="voortgang-clement">67</span> <span style="color:rgb(158, 248, 158)" id="voortgang-alexander">88</span></span>
                     <span class="tijd">Op schema</span>
                 </div>
             </div>
@@ -219,7 +219,7 @@
                 <h2>Filters</h2>
                 <div class="search-items">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="search" placeholder="Zoek in logboek...">
+                    <input id="zoek-logboek-clement" type="search" placeholder="Zoek in logboek..." aria-label="Zoek in logboek Clement">
                     <select name="select-project" id="select-project">
                         <option value="project1">Project 1</option>
                         <option value="project2">Project 2</option>
@@ -415,7 +415,7 @@
                 <h2>Filters</h2>
                 <div class="search-items">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="search" placeholder="Zoek in logboek...">
+                    <input id="zoek-logboek-alexander" type="search" placeholder="Zoek in logboek..." aria-label="Zoek in logboek Alexander">
                     <select name="select-project" id="select-project">
                         <option value="project1">Project 1</option>
                         <option value="project2">Project 2</option>
@@ -588,22 +588,22 @@
             <div class="uren-container">
                 <div class="item">
                     <span class="titel">Totaal Uren</span>
-                    <span class="aantal" id="totaleUren-Uren-Tracking"></span>
+                    <span class="aantal" id="totaleUren-Uren-Tracking">30</span>
                     <span class="tijd">Deze maand</span>
                 </div>
                 <div class="item">
                     <span class="titel">Alexander's Uren</span>
-                    <span class="aantal">12</span>
+                    <span class="aantal" id="Uren-Tracking-Alexander">12</span>
                     <span class="tijd">Deze maand</span>
                 </div>
                 <div class="item">
                     <span class="titel">Clement's Uren</span>
-                    <span class="aantal">18</span>
+                    <span class="aantal" id="Uren-Tracking-Clement">18</span>
                     <span class="tijd">Deze maand</span>
                 </div>
                 <div class="item">
                     <span class="titel">Gemiddeld per Dag</span>
-                    <span class="aantal">1.5</span>
+                    <span class="aantal">1</span>
                     <span class="tijd">Deze maand</span>
                 </div>
                 <div class="item">
