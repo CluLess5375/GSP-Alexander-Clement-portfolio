@@ -1111,42 +1111,51 @@
       <div class="home">LEGE PAGINA !</div>
     </section>
     <script>
-      function showSection(sectionId) {
-        const sections = document.querySelectorAll("section");
-        sections.forEach((sec) => (sec.style.display = "none"));
-        const active = document.getElementById(sectionId);
-        if (active) {
-          active.style.display = "";
-          // Scroll naar boven bij wissel
-          window.scrollTo({ top: 0, behavior: "auto" });
-        }
+  function showSection(sectionId) {
+    const sections = document.querySelectorAll("section");
+    sections.forEach((sec) => (sec.style.display = "none"));
+    const active = document.getElementById(sectionId);
+    if (active) {
+      active.style.display = "";
+      // Scroll naar boven bij wissel
+      window.scrollTo({ top: 0, behavior: "auto" });
+      // Opslaan welke section actief is
+      localStorage.setItem("activeSection", sectionId);
+    }
+  }
+
+  document.querySelectorAll(".sidebar div").forEach((div) => {
+    div.addEventListener("click", function () {
+      const text = this.textContent.trim().toLowerCase();
+      if (text.includes("dashboard")) {
+        showSection("dashboard");
+      } else if (text.includes("projecten")) {
+        showSection("projecten");
+      } else if (text.includes("logboek c")) {
+        showSection("logboek-clement");
+      } else if (text.includes("logboek a")) {
+        showSection("logboek-brands");
+      } else if (text.includes("tijdlijn")) {
+        showSection("tijdlijn");
+      } else if (text.includes("uren tracking")) {
+        showSection("uren-tracking");
+      } else if (text.includes("voortgang")) {
+        showSection("voortgang");
+      } else if (text.includes("instellingen")) {
+        showSection("instellingen");
       }
+    });
+  });
 
-      document.querySelectorAll(".sidebar div").forEach((div) => {
-        div.addEventListener("click", function () {
-          const text = this.textContent.trim().toLowerCase();
-          if (text.includes("dashboard")) {
-            showSection("dashboard");
-          } else if (text.includes("projecten")) {
-            showSection("projecten");
-          } else if (text.includes("logboek c")) {
-            showSection("logboek-clement");
-          } else if (text.includes("logboek a")) {
-            showSection("logboek-brands");
-          } else if (text.includes("tijdlijn")) {
-            showSection("tijdlijn");
-          } else if (text.includes("uren tracking")) {
-            showSection("uren-tracking");
-          } else if (text.includes("voortgang")) {
-            showSection("voortgang");
-          } else if (text.includes("instellingen")) {
-            showSection("instellingen");
-          }
-        });
-      });
+  
+  const savedSection = localStorage.getItem("activeSection");
+  if (savedSection) {
+    showSection(savedSection);
+  } else {
+    showSection("dashboard");
+  }
+</script>
 
-      showSection("dashboard");
-    </script>
     <script src="script.js"></script>
   </body>
 </html>
