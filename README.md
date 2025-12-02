@@ -1,13 +1,40 @@
-# GSP-Alexander-Clément
----
+# GSP — Foto-Website voor Lans Van Glabbeek
 
-## Hoe we op dit idee zijn gekomen?
-**GSP** staat voor **Geïntegreerd Stem Project**, dit is eigenlijk een complexe manier om eindproject te zeggen. Ons (*Alexander & Clément*) eindproject van dit jaar is de **Foto-Website**, deze website word gemaakt in naam van [lans Van Glabbeek](https://www.instagram.com/lans_vanglabbeek "Instagram van lans Van Glabbeek"). **Lans** is een *beginnende fotograaf* en wenste een **website** om wijn foto's te kunnen **delen**, ik (Alexander) heb toen voorgesteld om deze website te maken voor hem.
+## Projectdefinitie — Alexander & Clément
 
-## Het volledige idee.
-Het idee is om dus een website te maken met het doel om *foto's* te **delen**. Onder **delen** komt het deel van **gratis** foto's *gewoon te showen*. Lans moet elke foto kunnen uploaden vanuit dezelfde website, iedereen moet de **mogelijkheid** hebben om een *account* aan te kunnen maken en een *abonnoment* aanvragen.
+### 1. Inleiding
+Het GSP (Geïntegreerd Stem Project) is het eindproject van Alexander Brands en Clément. Voor dit project ontwikkelen we een foto-website voor Lans Van Glabbeek, een beginnende fotograaf die zijn werk professioneel wil delen met een publiek.
 
-## De werking.
-Simpel, elk persoon *moet/kan* een account aanmaken, hiervoor maken we gebruik van een Database: Elk account heeft zijn **Entiteit**. De foto's gaan op een *Fileserver* staan, deze fileserver gaat *geconnecteerd* zijn met de website, elke foto krijgt een **autogegenereerde** *thumbnail* en een **viewmode** om te laten zien wat deze foto's zijn. Tuurlijk moet elk foto **ratebaar** zijn en moeten mensen ook er een **mededeling** erbij kunnen zetten.
+### 2. Probleemstelling
+Lans Van Glabbeek beschikt over een groeiende collectie aan foto’s, maar mist een centraal platform om zijn werk te tonen, beheren en delen met zijn volgers. Sociale media zijn beperkt qua personalisatie en beheer, waardoor een eigen platform een logische volgende stap is.
 
----
+### 3. Doel van het project
+Het doel van dit project is om een volledig functionele en gebruiksvriendelijke foto-website te bouwen waar:
+* Lans eenvoudig foto’s kan uploaden, beheren en presenteren.
+* Gebruikers een account kunnen aanmaken om foto’s te bekijken, raten en reageren.
+* Bezoekers foto’s kunnen downloaden via een overzichtelijke interface.
+
+### 4. Scope van het project
+
+#### 4.1 Functionaliteiten
+**Voor de fotograaf (beheerder):**
+* Foto’s uploaden via een beveiligd dashboard.
+* Automatische thumbnail-generatie en optimalisatie voor snelle weergave.
+* Beheer van foto’s, beschrijvingen en categorieën.
+
+**Voor bezoekers/gebruiker:**
+* Registratie en inloggen met persoonlijke accounts.
+* Foto’s bekijken in een overzichtelijke gallery view.
+* Mogelijkheid om te raten, reageren en downloaden.
+
+#### 4.2 Technische componenten
+*   **Database:** voor gebruikers, reacties en ratings (bijv. MySQL of MongoDB).
+*   **Fileserver:** voor veilige opslag van foto’s, gekoppeld aan de webapplicatie.
+*   **Frontend:** ontwikkeld met moderne webtechnologieën (HTML, CSS, JS, eventueel een framework zoals React of Vue).
+*   **Backend:** API-gestuurd systeem dat communicatie tussen database en frontend verzorgt.
+
+### 5. Verwachte resultaten
+Aan het einde van dit project zal een volledig werkende webapplicatie opgeleverd worden die:
+* Functioneel, intuïtief en visueel aantrekkelijk is.
+* Gebruikers toelaat om op een eenvoudige manier te interageren met de content.
+* De fotograaf de nodige controle en vrijheid geeft over zijn eigen portfolio.

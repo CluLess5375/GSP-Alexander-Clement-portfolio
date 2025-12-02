@@ -1,782 +1,1294 @@
 <!DOCTYPE html>
 <html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>GDPR TEST</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>GSP '25 - '26</title>
+  </head>
+  <body onload="laadPagina()">
     <header>
-        <h1>GDPR TEST</h1>
-        <input type="search" placeholder="Zoek projecten">
-        <div class="meldingen">
-            <i class="fa-regular fa-bell" style="cursor: pointer;"></i>
-        </div>
-        <div class="profiel">
-            <i class="fa-regular fa-user" style="cursor: pointer;"></i>
-        </div>
-        <div class="github" onclick="window.open('https://github.com/CluLess5375/GSP-Alexander-Clement-portfolio', '_blank');">
-            <i class="fa-brands fa-github" style="cursor: pointer;"></i>
-        </div>
+      <div class="header-icon">
+        <i class="fa-solid fa-circle-nodes"></i>
+      </div>
+      <h1>GSP 2025 - 2026</h1>
+      <input
+        id="zoek-projecten"
+        type="search"
+        placeholder="Zoek projecten"
+        aria-label="Zoek projecten"
+      />
+      <div class="meldingen">
+        <i class="fa-regular fa-bell" style="cursor: pointer"></i>
+      </div>
+      <div class="profiel">
+        <i class="fa-regular fa-user" style="cursor: pointer"></i>
+      </div>
+      <div
+        class="github"
+        onclick="window.open('https://github.com/CluLess5375/GSP-Alexander-Clement-portfolio', '_blank');"
+      >
+        <i class="fa-brands fa-github" style="cursor: pointer"></i>
+      </div>
     </header>
     <nav>
-        <div class="sidebar">
-            
-                <div onclick="location.href='#dashboard'">
-                    <i class="fa-solid fa-table-list"></i>
-                    Dashboard
-                </div>
-                <div onclick="location.href='#projecten'">
-                    <i class="fa-solid fa-folder-open"></i>
-                    Projecten
-                </div>
-                <div onclick="location.href='#logboek-clement'">
-                    <i class="fa-solid fa-book"></i>
-                    Logboek C
-                </div>
-                <div onclick="location.href='#logboek-brands'">
-                    <i class="fa-solid fa-book"></i>
-                    Logboek A
-                </div>
-                <div onclick="location.href='#tijdlijn'">
-                    <i class="fa-solid fa-bars-staggered"></i>
-                    Tijdlijn
-                </div>
-                <div onclick="location.href='#uren-tracking'">
-                    <i class="fa-solid fa-clock"></i>
-                    Uren Tracking
-                </div>
-                <div onclick="location.href='#voortgang'">
-                    <i class="fa-solid fa-chart-simple"></i>
-                    Voortgang
-                </div>
-                <div onclick="location.href='#instellingen'">
-                    <i class="fa-solid fa-gear"></i>
-                    Instellingen
-                </div>
-            
+      <div class="sidebar">
+        <div onclick="location.href='#dashboard'">
+          <i class="fa-solid fa-table-list"></i>
+          Dashboard
         </div>
+        <div onclick="location.href='#projecten'">
+          <i class="fa-solid fa-folder-open"></i>
+          Projecten
+        </div>
+        <div onclick="location.href='#logboek-clement'">
+          <i class="fa-solid fa-book"></i>
+          Logboek C
+        </div>
+        <div onclick="location.href='#logboek-brands'">
+          <i class="fa-solid fa-book"></i>
+          Logboek A
+        </div>
+        <div onclick="location.href='#tijdlijn'">
+          <i class="fa-solid fa-bars-staggered"></i>
+          Tijdlijn
+        </div>
+        <div onclick="location.href='#uren-tracking'">
+          <i class="fa-solid fa-clock"></i>
+          Uren Tracking
+        </div>
+        <div onclick="location.href='#voortgang'">
+          <i class="fa-solid fa-chart-simple"></i>
+          Voortgang
+        </div>
+        <div onclick="location.href='#instellingen'">
+          <i class="fa-solid fa-gear"></i>
+          Instellingen
+        </div>
+      </div>
     </nav>
-    <section id="dashboard" style="display: none;">
-        <div class="home">
-            <div class="welkom">
-                <h2>Welkom terug, Clement & Alexander !</h2>
-                <p>Hier is een overzicht van je activiteiten.</p>
-                <hr>
-                <h3>Korte projectinhoud</h3>
-                <p style="line-height: 25px;">Deze website is ontwikkeld door Clément en Alexander als onderdeel van hun Geïntegreerd STEM Project. Het platform is speciaal ontworpen voor fotograaf Lans Van Glabbeek, zodat hij zijn werk professioneel kan presenteren en delen. Bezoekers kunnen foto’s bekijken, raten, reageren en downloaden. Lans beheert zijn portfolio via een beveiligd dashboard, met functies zoals uploaden, categoriseren en optimaliseren van beelden. Het resultaat: een gebruiksvriendelijke, visueel aantrekkelijke website die fotografie centraal stelt.</p>
-            </div>
-            <div class="projecten-container" style="display: flex;">
-                <div class="item">
-                    <span class="titel">Actieve Projecten</span>
-                    <span class="aantal">3</span>
-                    <span class="tijd">2 in voorbereiding</span>
-                </div>
-                <div class="item">
-                    <span class="titel">Totaal Uren</span>
-                    <span class="aantal">30</span>
-                    <span class="tijd">Deze week: 18u</span>
-                </div>
-                <div class="item">
-                    <span class="titel">Logboek Entries</span>
-                    <span class="aantal">21</span>
-                    <span class="tijd">Laatste entry vandaag</span>
-                </div>
-                <div class="item">
-                    <span class="titel">Gemiddelde Voortgang</span>
-                    <span class="aantal">67%</span>
-                    <span class="tijd">Op schema</span>
-                </div>
-            </div>
-            <div class="deadlines-container">
-                <span class="titel">Komende Deadlines</span>
-                <span class="info">Blijf op schema met je taken</span>
-                <div class="item">
-                    <span class="taak">Database schema finaliseren</span>
-                    <span class="tijd">Over 3 dagen</span>
-                </div>
-                <div class="item">
-                    <span class="taak">Frontend mockups reviewen</span>
-                    <span class="tijd">Over 5 dagen</span>
-                </div>
-                <div class="item">
-                    <span class="taak">API documentatie updaten</span>
-                    <span class="tijd">Over 1 week</span>
-                </div>
-            </div>
-            <div class="overzicht-container">
-                <span class="titel">Team Uren Overzicht</span>
-                <span class="info">Totaal gewerkte uren per teamlid</span>
-                <div class="item-container" style="display:flex">
-                    <div class="item">
-                        <span class="naam">Clement</span>
-                        <span class="tijd">18h</span>
-                    </div>
-                    <div class="item">
-                        <span class="naam">Alexander</span>
-                        <span class="tijd">12h</span>
-                    </div>
-                </div>
-                <span class="totale-tijd">Totaal Team - 30h</span>
-            </div>
+    <section id="dashboard" style="display: none">
+      <div class="home">
+        <div class="welkom">
+          <h2>Welkom terug, Clement & Alexander !</h2>
+          <p>Hier is een overzicht van je activiteiten.</p>
+          <hr />
+          <h3>Korte projectinhoud</h3>
+          <p class="projectDef" style="line-height: 25px">
+            Wij zijn bezig met het GSP-project. We bouwen een foto-website voor
+            Lans Van Glabbeek, een fotograaf die een eigen platform nodig heeft
+            om zijn werk te tonen, te beheren en te delen, omdat social media te
+            beperkt is. Ons doel is om een volledig functionele en
+            gebruiksvriendelijke website te creëren waar Lans eenvoudig foto's
+            kan uploaden en beheren, en waar gebruikers accounts kunnen aanmaken
+            om foto's te bekijken, te raten, te reageren en te downloaden.
+            Technisch gezien omvat dit een database, een fileserver, een moderne
+            frontend (HTML, CSS, JS, eventueel React of Vue) en een
+            API-gestuurde backend. Het verwachte resultaat is een werkende,
+            intuïtieve en visueel aantrekkelijke webapplicatie die Lans de
+            nodige controle geeft en gebruikers gemakkelijk laat interacteren.
+          </p>
+          <div
+            class="nieuw-project-btn"
+            onclick="window.open('ProjectDef.pdf', '_blank');"
+          >
+            <i class="fa-solid fa-file-pdf"></i> Open pdf
+          </div>
         </div>
+        <div class="projecten-container" style="display: flex">
+          <div class="item">
+            <span class="titel">Actieve Projecten</span>
+            <span class="aantal">3</span>
+            <span class="tijd">2 in voorbereiding</span>
+          </div>
+          <div class="item">
+            <span class="titel">Totaal Uren</span>
+            <span class="aantal" id="totaleUren-Dashboard-Card">30</span>
+            <span class="tijd">Deze week: 18u</span>
+          </div>
+          <div class="item">
+            <span class="titel">Logboek Entries</span>
+            <span class="aantal" id="totaal-Aantal-Entries">21</span>
+            <span class="tijd" id="laatste-entry">Laatste entry vandaag</span>
+          </div>
+          <div class="item">
+            <span class="titel">Percentage Uren / Lid</span>
+            <span class="aantal"
+              ><span style="color: rgb(154, 154, 233)" id="voortgang-clement"
+                >67</span
+              >
+              <span style="color: rgb(158, 248, 158)" id="voortgang-alexander"
+                >88</span
+              ></span
+            >
+            <span class="tijd">Op schema</span>
+          </div>
+        </div>
+        <div class="deadlines-container">
+          <span class="titel">Komende Deadlines</span>
+          <span class="info">Blijf op schema met je taken</span>
+          <div class="item">
+            <span class="taak">Database schema finaliseren</span>
+            <span class="tijd">Over 3 dagen</span>
+          </div>
+          <div class="item">
+            <span class="taak">Frontend mockups reviewen</span>
+            <span class="tijd">Over 5 dagen</span>
+          </div>
+          <div class="item">
+            <span class="taak">API documentatie updaten</span>
+            <span class="tijd">Over 1 week</span>
+          </div>
+        </div>
+        <div class="overzicht-container">
+          <span class="titel">Team Uren Overzicht</span>
+          <span class="info">Totaal gewerkte uren per teamlid</span>
+          <div class="item-container" style="display: flex">
+            <div class="item">
+              <span class="naam">Clement</span>
+              <span class="tijd tijd-dashboard" id="urenClement">18</span>
+            </div>
+            <div class="item">
+              <span class="naam">Alexander</span>
+              <span class="tijd tijd-dashboard" id="urenAlexander">12</span>
+            </div>
+          </div>
+          <span class="totale-tijd" id="totaleUren-Dashboard">30</span>
+        </div>
+      </div>
     </section>
-    <section id="projecten" style="display: none;">
-        <div class="home">
-            <div class="welkom">
-                <h2>Mijn Projecten</h2>
-                <p>Beheer en organiseer je eindwerk projecten</p>
-                <div class="nieuw-project-btn">
-                    <i class="fa-solid fa-plus"></i> Nieuw Project
-                </div>
-            </div>
-            <div class="project-container">
-                <div class="item-container">
-                    <div class="item">
-                    <p class="titel">E-commerce Platform</p>
-                    <p class="voortgang">In Progress</p>
-                    <p class="info">Full-stack webapplicatie met React, Node.js en PostgreSQL</p>
-                    <p class="info"><span class="categorie"><i class="fa-solid fa-folder-open"></i> Full-stack Development</span><span class="datum"><i class="fa-solid fa-calendar"></i> 15/12/'24</span><span class="uren"><i class="fa-solid fa-clock"></i> 89 uren</span></p>
-                    <p class="voortgang-text">Voortgang<span class="progressbar-value">75%</span></p>
-                    <progress value="75" max="100" class="project-voortgang-progressbar"></progress>
-                    <p class="tech-text">Technologieën</p>
-                    <p class="technologieën"><span class="technologie">React</span><span class="technologie" style="margin-left: 20px;">Node.js</span><span class="technologie" style="margin-left: 20px;">PostgreSQL</span></p>
-                    <p class="cloudfiles-text">Cloud Bestanden</p>
-                    <div class="cloudfiles-btn-container">
-                        <div class="item"><i class="fa-solid fa-up-right-from-square"></i> GitHub Repo</div>
-                        <div class="item"><i class="fa-solid fa-up-right-from-square"></i> Staging Environment</div>
-                        <div class="item"><i class="fa-solid fa-up-right-from-square"></i> Design Files</div>
-                    </div>
-                    <hr style="margin-top: 20px; background-color: black; border: none; height: 1px;">
-                    <p class="bottom-text"><i class="fa-solid fa-file"></i><span class="aantal-cloud-files"> 23 documenten</span><span class="time-last-modify">Laatst gewijzigd: 2 uur geleden</span></p>
-                    <div class="open-project-btn">Project Openen</div>
-                    </div>
-                </div>
-                <div class="item-container">
-                    <div class="item">
-                    <p class="titel">E-commerce Platform</p>
-                    <p class="voortgang">In Progress</p>
-                    <p class="info">Full-stack webapplicatie met React, Node.js en PostgreSQL</p>
-                    <p class="info"><span class="categorie"><i class="fa-solid fa-folder-open"></i> Full-stack Development</span><span class="datum"><i class="fa-solid fa-calendar"></i> 15/12/'24</span><span class="uren"><i class="fa-solid fa-clock"></i> 89 uren</span></p>
-                    <p class="voortgang-text">Voortgang<span class="progressbar-value">45%</span></p>
-                    <progress value="45" max="100" class="project-voortgang-progressbar"></progress>
-                    <p class="tech-text">Technologieën</p>
-                    <p class="technologieën"><span class="technologie">React</span><span class="technologie" style="margin-left: 20px;">Node.js</span><span class="technologie" style="margin-left: 20px;">PostgreSQL</span></p>
-                    <p class="cloudfiles-text">Cloud Bestanden</p>
-                    <div class="cloudfiles-btn-container">
-                        <div class="item"><i class="fa-solid fa-up-right-from-square"></i> GitHub Repo</div>
-                        <div class="item"><i class="fa-solid fa-up-right-from-square"></i> Staging Environment</div>
-                        <div class="item"><i class="fa-solid fa-up-right-from-square"></i> Design Files</div>
-                    </div>
-                    <hr style="margin-top: 20px; background-color: black; border: none; height: 1px;">
-                    <p class="bottom-text"><i class="fa-solid fa-file"></i><span class="aantal-cloud-files"> 23 documenten</span><span class="time-last-modify">Laatst gewijzigd: 2 uur geleden</span></p>
-                    <div class="open-project-btn">Project Openen</div>
-                    </div>
-                </div>
-                <div class="item-container">
-                    <div class="item">
-                    <p class="titel">Database Optimization</p>
-                    <p class="voortgang" style="background-color: rgb(44, 44, 194);">Almost Done</p>
-                    <p class="info">Performance verbetering van bestaande database systemen</p>
-                    <p class="info"><span class="categorie"><i class="fa-solid fa-folder-open"></i> Backend Development</span><span class="datum"><i class="fa-solid fa-calendar"></i> 10/12/'24</span><span class="uren"><i class="fa-solid fa-clock"></i> 67 uren</span></p>
-                    <p class="voortgang-text">Voortgang<span class="progressbar-value">90%</span></p>
-                    <progress value="90" max="100" class="project-voortgang-progressbar"></progress>
-                    <p class="tech-text">Technologieën</p>
-                    <p class="technologieën"><span class="technologie">MySQL</span><span class="technologie" style="margin-left: 20px;">Python</span><span class="technologie" style="margin-left: 20px;">Docker</span></p>
-                    <p class="cloudfiles-text">Cloud Bestanden</p>
-                    <div class="cloudfiles-btn-container">
-                        <div class="item"><i class="fa-solid fa-up-right-from-square"></i> Database Backup</div>
-                        <div class="item"><i class="fa-solid fa-up-right-from-square"></i> Performance Reports</div>
-                        <div class="item"><i class="fa-solid fa-up-right-from-square"></i> Migration Scripts</div>
-                    </div>
-                    <hr style="margin-top: 20px; background-color: black; border: none; height: 1px;">
-                    <p class="bottom-text"><i class="fa-solid fa-file"></i><span class="aantal-cloud-files"> 18 documenten</span><span class="time-last-modify">Laatst gewijzigd: 3 uur geleden</span></p>
-                    <div class="open-project-btn">Project Openen</div>
-                    </div>
-                </div>
-            </div>
+    <section id="projecten" style="display: none">
+      <div class="home">
+        <div class="welkom">
+          <h2>Mijn Projecten</h2>
+          <p>Beheer en organiseer je eindwerk projecten</p>
+          <div class="nieuw-project-btn">
+            <i class="fa-solid fa-plus"></i> Nieuw Project
+          </div>
         </div>
+        <div class="project-container">
+          <div class="item-container">
+            <div class="item">
+              <p class="titel">E-commerce Platform</p>
+              <p class="voortgang">In Progress</p>
+              <p class="info">
+                Full-stack webapplicatie met React, Node.js en PostgreSQL
+              </p>
+              <p class="info">
+                <span class="categorie"
+                  ><i class="fa-solid fa-folder-open"></i> Full-stack
+                  Development</span
+                ><span class="datum"
+                  ><i class="fa-solid fa-calendar"></i> 15/12/'24</span
+                ><span class="uren"
+                  ><i class="fa-solid fa-clock"></i> 89 uren</span
+                >
+              </p>
+              <p class="voortgang-text">
+                Voortgang<span class="progressbar-value">75%</span>
+              </p>
+              <progress
+                value="75"
+                max="100"
+                class="project-voortgang-progressbar"
+              ></progress>
+              <p class="tech-text">Technologieën</p>
+              <p class="technologieën">
+                <span class="technologie">React</span
+                ><span class="technologie" style="margin-left: 20px"
+                  >Node.js</span
+                ><span class="technologie" style="margin-left: 20px"
+                  >PostgreSQL</span
+                >
+              </p>
+              <p class="cloudfiles-text">Cloud Bestanden</p>
+              <div class="cloudfiles-btn-container">
+                <div class="item">
+                  <i class="fa-solid fa-up-right-from-square"></i> GitHub Repo
+                </div>
+                <div class="item">
+                  <i class="fa-solid fa-up-right-from-square"></i> Staging
+                  Environment
+                </div>
+                <div class="item">
+                  <i class="fa-solid fa-up-right-from-square"></i> Design Files
+                </div>
+              </div>
+              <hr
+                style="
+                  margin-top: 20px;
+                  background-color: black;
+                  border: none;
+                  height: 1px;
+                "
+              />
+              <p class="bottom-text">
+                <i class="fa-solid fa-file"></i
+                ><span class="aantal-cloud-files"> 23 documenten</span
+                ><span class="time-last-modify"
+                  >Laatst gewijzigd: 2 uur geleden</span
+                >
+              </p>
+              <div class="open-project-btn">Project Openen</div>
+            </div>
+          </div>
+          <div class="item-container">
+            <div class="item">
+              <p class="titel">E-commerce Platform</p>
+              <p class="voortgang">In Progress</p>
+              <p class="info">
+                Full-stack webapplicatie met React, Node.js en PostgreSQL
+              </p>
+              <p class="info">
+                <span class="categorie"
+                  ><i class="fa-solid fa-folder-open"></i> Full-stack
+                  Development</span
+                ><span class="datum"
+                  ><i class="fa-solid fa-calendar"></i> 15/12/'24</span
+                ><span class="uren"
+                  ><i class="fa-solid fa-clock"></i> 89 uren</span
+                >
+              </p>
+              <p class="voortgang-text">
+                Voortgang<span class="progressbar-value">45%</span>
+              </p>
+              <progress
+                value="45"
+                max="100"
+                class="project-voortgang-progressbar"
+              ></progress>
+              <p class="tech-text">Technologieën</p>
+              <p class="technologieën">
+                <span class="technologie">React</span
+                ><span class="technologie" style="margin-left: 20px"
+                  >Node.js</span
+                ><span class="technologie" style="margin-left: 20px"
+                  >PostgreSQL</span
+                >
+              </p>
+              <p class="cloudfiles-text">Cloud Bestanden</p>
+              <div class="cloudfiles-btn-container">
+                <div class="item">
+                  <i class="fa-solid fa-up-right-from-square"></i> GitHub Repo
+                </div>
+                <div class="item">
+                  <i class="fa-solid fa-up-right-from-square"></i> Staging
+                  Environment
+                </div>
+                <div class="item">
+                  <i class="fa-solid fa-up-right-from-square"></i> Design Files
+                </div>
+              </div>
+              <hr
+                style="
+                  margin-top: 20px;
+                  background-color: black;
+                  border: none;
+                  height: 1px;
+                "
+              />
+              <p class="bottom-text">
+                <i class="fa-solid fa-file"></i
+                ><span class="aantal-cloud-files"> 23 documenten</span
+                ><span class="time-last-modify"
+                  >Laatst gewijzigd: 2 uur geleden</span
+                >
+              </p>
+              <div class="open-project-btn">Project Openen</div>
+            </div>
+          </div>
+          <div class="item-container">
+            <div class="item">
+              <p class="titel">Database Optimization</p>
+              <p class="voortgang" style="background-color: rgb(44, 44, 194)">
+                Almost Done
+              </p>
+              <p class="info">
+                Performance verbetering van bestaande database systemen
+              </p>
+              <p class="info">
+                <span class="categorie"
+                  ><i class="fa-solid fa-folder-open"></i> Backend
+                  Development</span
+                ><span class="datum"
+                  ><i class="fa-solid fa-calendar"></i> 10/12/'24</span
+                ><span class="uren"
+                  ><i class="fa-solid fa-clock"></i> 67 uren</span
+                >
+              </p>
+              <p class="voortgang-text">
+                Voortgang<span class="progressbar-value">90%</span>
+              </p>
+              <progress
+                value="90"
+                max="100"
+                class="project-voortgang-progressbar"
+              ></progress>
+              <p class="tech-text">Technologieën</p>
+              <p class="technologieën">
+                <span class="technologie">MySQL</span
+                ><span class="technologie" style="margin-left: 20px"
+                  >Python</span
+                ><span class="technologie" style="margin-left: 20px"
+                  >Docker</span
+                >
+              </p>
+              <p class="cloudfiles-text">Cloud Bestanden</p>
+              <div class="cloudfiles-btn-container">
+                <div class="item">
+                  <i class="fa-solid fa-up-right-from-square"></i> Database
+                  Backup
+                </div>
+                <div class="item">
+                  <i class="fa-solid fa-up-right-from-square"></i> Performance
+                  Reports
+                </div>
+                <div class="item">
+                  <i class="fa-solid fa-up-right-from-square"></i> Migration
+                  Scripts
+                </div>
+              </div>
+              <hr
+                style="
+                  margin-top: 20px;
+                  background-color: black;
+                  border: none;
+                  height: 1px;
+                "
+              />
+              <p class="bottom-text">
+                <i class="fa-solid fa-file"></i
+                ><span class="aantal-cloud-files"> 18 documenten</span
+                ><span class="time-last-modify"
+                  >Laatst gewijzigd: 3 uur geleden</span
+                >
+              </p>
+              <div class="open-project-btn">Project Openen</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <section id="logboek-clement" style="display: none;">
-        <div class="home">
-            <div class="welkom">
-                <h2>Logboek</h2>
-                <p>Registreer je dagelijkse werkzaamheden en uren</p>
-                <div class="nieuw-logboek-entry-btn">
-                    <i class="fa-solid fa-plus"></i> Nieuwe Entry
-                </div>
-            
-            </div>
-            <div class="logboek-search">
-                <h2>Filters</h2>
-                <div class="search-items">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="search" placeholder="Zoek in logboek...">
-                    <select name="select-project" id="select-project">
-                        <option value="project1">Project 1</option>
-                        <option value="project2">Project 2</option>
-                    </select>
-                    <select name="categorie" id="categorie">
-                        <option value="all">Alle Categorieën</option>
-                        <option value="school-app">School - APP</option>
-                        <option value="school-prod">School - PROD</option>
-                        <option value="school-web">School - WEB</option>
-                        <option value="thuis">Thuis</option>
-                        <option value="webdesign">Webdesign</option>
-                        <option value="programmeren">Programmeren</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">Logboek items uit de volgorde gezet zodat de nieuwste items bovenaan staan</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 0.17 uren <i class="fa-solid fa-calendar"></i> 10/7/2025</span>
-                    <span class="info">Clément - programmeren</span>
-                    <span class="categorie">Programmeren</span>
-                </div>
-            </div>
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">commentaar css gemaakt</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 3.00 uren <i class="fa-solid fa-calendar"></i> 10/6/2025</span>
-                    <span class="info">Clément - thuis</span>
-                    <span class="categorie">Thuis</span>
-                </div>
-            </div>
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">sectie projecten en uren-tracking volledig afgewerkt en afwerken branch gemerged naar main</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 2.50 uren <i class="fa-solid fa-calendar"></i> 10/6/2025</span>
-                    <span class="info">Clément - thuis</span>
-                    <span class="categorie">Thuis</span>
-                </div>
-            </div>
-            
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">sectie voortgang gemaakt en afgewerkt en commited to branch</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 1.33 uren <i class="fa-solid fa-calendar"></i> 10/3/2025</span>
-                    <span class="info">Clément - thuis</span>
-                    <span class="categorie">Thuis</span>
-                </div>
-            </div>
-            
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">secties verder maken</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 1.90 uren <i class="fa-solid fa-calendar"></i> 10/2/2025</span>
-                    <span class="info">Clément - webdesign</span>
-                    <span class="categorie">Webdesign</span>
-                </div>
-            </div>
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">alles van de main branch naar de nieuwe afwerken branch gezet</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 0.08 uren <i class="fa-solid fa-calendar"></i> 10/2/2025</span>
-                    <span class="info">Clément - webdesign</span>
-                    <span class="categorie">Webdesign</span>
-                </div>
-            </div>
-            
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">zorgen voor de buttons in de items op de logboek section</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 0.50 uren <i class="fa-solid fa-calendar"></i> 9/30/2025</span>
-                    <span class="info">Clément - webdesign</span>
-                    <span class="categorie">Webdesign</span>
-                </div>
-            </div>
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">zorgen voor de logboek section en een klein stuk van de projecten section</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 0.67 uren <i class="fa-solid fa-calendar"></i> 9/30/2025</span>
-                    <span class="info">Clément - webdesign</span>
-                    <span class="categorie">Webdesign</span>
-                </div>
-            </div>
-            
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">500+ regels html getypt (indelen van de sections)</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 3.20 uren <i class="fa-solid fa-calendar"></i> 9/29/2025</span>
-                    <span class="info">Clément - programmeren</span>
-                    <span class="categorie">Programmeren</span>
-                </div>
-            </div>
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">begonnen in de klas met de portfolio</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 1.83 uren <i class="fa-solid fa-calendar"></i> 9/23/2025</span>
-                    <span class="info">Clément - webdesign</span>
-                    <span class="categorie">Webdesign</span>
-                </div>
-            </div>
-            
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">Verderwerken aan planning. Toevoegen deadlines, vakantieperioden, taken en subtaken.</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 0.83 uren <i class="fa-solid fa-calendar"></i> 9/9/2025</span>
-                    <span class="info">Clément - School - PROD</span>
-                    <span class="categorie">School - PROD</span>
-                </div>
-            </div>
-            
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">Start opstelling planning met tijdlijntool. Individuele voorbereiding, klassikale evaluatie en visuele planning.</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 1.67 uren <i class="fa-solid fa-calendar"></i> 9/2/2025</span>
-                    <span class="info">Clément - School - APP</span>
-                    <span class="categorie">School - APP</span>
-                </div>
-            </div>
+    <section id="logboek-clement" style="display: none">
+      <div class="home">
+        <div class="welkom">
+          <h2>Logboek</h2>
+          <p>Registreer je dagelijkse werkzaamheden en uren</p>
+          <div class="nieuw-logboek-entry-btn">
+            <i class="fa-solid fa-plus"></i> Nieuwe Entry
+          </div>
         </div>
+        <div class="logboek-search">
+          <h2>Filters</h2>
+          <div class="search-items">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              id="zoek-logboek-clement"
+              type="search"
+              placeholder="Zoek in logboek..."
+              aria-label="Zoek in logboek Clement"
+            />
+            <select name="select-project" id="select-project">
+              <option value="project1">Project 1</option>
+              <option value="project2">Project 2</option>
+            </select>
+            <select name="categorie" id="categorie">
+              <option value="all">Alle Categorieën</option>
+              <option value="school-app">School - APP</option>
+              <option value="school-prod">School - PROD</option>
+              <option value="school-web">School - WEB</option>
+              <option value="thuis">Thuis</option>
+              <option value="webdesign">Webdesign</option>
+              <option value="programmeren">Programmeren</option>
+            </select>
+          </div>
+        </div>
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >2 logboekpagina's toevoegen voor de verschillende leden</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 0.42 uren
+              <i class="fa-solid fa-calendar"></i> 11/3/2025</span
+            >
+            <span class="info" id="logboek-item-clement"
+              >Clément - programmeren</span
+            >
+            <span class="categorie">Programmeren</span>
+          </div>
+        </div>
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >Logboek items uit de volgorde gezet zodat de nieuwste items
+              bovenaan staan</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 0.17 uren
+              <i class="fa-solid fa-calendar"></i> 10/7/2025</span
+            >
+            <span class="info" id="logboek-item-clement"
+              >Clément - programmeren</span
+            >
+            <span class="categorie">Programmeren</span>
+          </div>
+        </div>
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel">commentaar css gemaakt</span>
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 3.00 uren
+              <i class="fa-solid fa-calendar"></i> 10/6/2025</span
+            >
+            <span class="info" id="logboek-item-clement">Clément - thuis</span>
+            <span class="categorie">Thuis</span>
+          </div>
+        </div>
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >sectie projecten en uren-tracking volledig afgewerkt en afwerken
+              branch gemerged naar main</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 2.50 uren
+              <i class="fa-solid fa-calendar"></i> 10/6/2025</span
+            >
+            <span class="info" id="logboek-item-clement">Clément - thuis</span>
+            <span class="categorie">Thuis</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >sectie voortgang gemaakt en afgewerkt en commited to branch</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 1.33 uren
+              <i class="fa-solid fa-calendar"></i> 10/3/2025</span
+            >
+            <span class="info" id="logboek-item-clement">Clément - thuis</span>
+            <span class="categorie">Thuis</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel">secties verder maken</span>
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 1.90 uren
+              <i class="fa-solid fa-calendar"></i> 10/2/2025</span
+            >
+            <span class="info" id="logboek-item-clement"
+              >Clément - webdesign</span
+            >
+            <span class="categorie">Webdesign</span>
+          </div>
+        </div>
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >alles van de main branch naar de nieuwe afwerken branch
+              gezet</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 0.08 uren
+              <i class="fa-solid fa-calendar"></i> 10/2/2025</span
+            >
+            <span class="info" id="logboek-item-clement"
+              >Clément - webdesign</span
+            >
+            <span class="categorie">Webdesign</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >zorgen voor de buttons in de items op de logboek section</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 0.50 uren
+              <i class="fa-solid fa-calendar"></i> 9/30/2025</span
+            >
+            <span class="info" id="logboek-item-clement"
+              >Clément - webdesign</span
+            >
+            <span class="categorie">Webdesign</span>
+          </div>
+        </div>
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >zorgen voor de logboek section en een klein stuk van de projecten
+              section</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 0.67 uren
+              <i class="fa-solid fa-calendar"></i> 9/30/2025</span
+            >
+            <span class="info" id="logboek-item-clement"
+              >Clément - webdesign</span
+            >
+            <span class="categorie">Webdesign</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >500+ regels html getypt (indelen van de sections)</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 3.20 uren
+              <i class="fa-solid fa-calendar"></i> 9/29/2025</span
+            >
+            <span class="info" id="logboek-item-clement"
+              >Clément - programmeren</span
+            >
+            <span class="categorie">Programmeren</span>
+          </div>
+        </div>
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel">begonnen in de klas met de portfolio</span>
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 1.83 uren
+              <i class="fa-solid fa-calendar"></i> 9/23/2025</span
+            >
+            <span class="info" id="logboek-item-clement"
+              >Clément - webdesign</span
+            >
+            <span class="categorie">Webdesign</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >Verderwerken aan planning. Toevoegen deadlines, vakantieperioden,
+              taken en subtaken.</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 0.83 uren
+              <i class="fa-solid fa-calendar"></i> 9/9/2025</span
+            >
+            <span class="info" id="logboek-item-clement"
+              >Clément - School - PROD</span
+            >
+            <span class="categorie">School - PROD</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >Start opstelling planning met tijdlijntool. Individuele
+              voorbereiding, klassikale evaluatie en visuele planning.</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 1.67 uren
+              <i class="fa-solid fa-calendar"></i> 9/2/2025</span
+            >
+            <span class="info" id="logboek-item-clement"
+              >Clément - School - APP</span
+            >
+            <span class="categorie">School - APP</span>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <section id="logboek-brands" style="display: none">
+      <div class="home">
+        <div class="welkom">
+          <h2>Logboek</h2>
+          <p>Registreer je dagelijkse werkzaamheden en uren</p>
+          <div class="nieuw-logboek-entry-btn">
+            <i class="fa-solid fa-plus"></i> Nieuwe Entry
+          </div>
+        </div>
+        <div class="logboek-search">
+          <h2>Filters</h2>
+          <div class="search-items">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              id="zoek-logboek-alexander"
+              type="search"
+              placeholder="Zoek in logboek..."
+              aria-label="Zoek in logboek Alexander"
+            />
+            <select name="select-project" id="select-project">
+              <option value="project1">Project 1</option>
+              <option value="project2">Project 2</option>
+            </select>
+            <select name="categorie" id="categorie">
+              <option value="all">Alle Categorieën</option>
+              <option value="school-app">School - APP</option>
+              <option value="school-prod">School - PROD</option>
+              <option value="school-web">School - WEB</option>
+              <option value="thuis">Thuis</option>
+              <option value="webdesign">Webdesign</option>
+              <option value="programmeren">Programmeren</option>
+            </select>
+          </div>
+        </div>
 
-    <section id="logboek-brands" style="display: none;">
-        <div class="home">
-            <div class="welkom">
-                <h2>Logboek</h2>
-                <p>Registreer je dagelijkse werkzaamheden en uren</p>
-                <div class="nieuw-logboek-entry-btn">
-                    <i class="fa-solid fa-plus"></i> Nieuwe Entry
-                </div>
-            
+        <!-- Nieuwe entries toegevoegd op basis van afbeelding -->
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
             </div>
-            <div class="logboek-search">
-                <h2>Filters</h2>
-                <div class="search-items">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="search" placeholder="Zoek in logboek...">
-                    <select name="select-project" id="select-project">
-                        <option value="project1">Project 1</option>
-                        <option value="project2">Project 2</option>
-                    </select>
-                    <select name="categorie" id="categorie">
-                        <option value="all">Alle Categorieën</option>
-                        <option value="school-app">School - APP</option>
-                        <option value="school-prod">School - PROD</option>
-                        <option value="school-web">School - WEB</option>
-                        <option value="thuis">Thuis</option>
-                        <option value="webdesign">Webdesign</option>
-                        <option value="programmeren">Programmeren</option>
-                    </select>
-                </div>
-            </div>
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">Dummy data vervangen met Data die we op deze moment hebben</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 1 uren <i class="fa-solid fa-calendar"></i> 10/7/2025</span>
-                    <span class="info">Alexander - Thuis</span>
-                    <span class="categorie">Thuis</span>
-                </div>
-            </div>
-            
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">Uitleg over de wesite afgemaakt en een beetje verder gewerkt aan de portfolio website.</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 1.42 uren <i class="fa-solid fa-calendar"></i> 10/5/2025</span>
-                    <span class="info">Alexander - Thuis</span>
-                    <span class="categorie">Thuis</span>
-                </div>
-            </div>
-            
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">Verder werken GSP portfolio website. En het beginnen van de uitleg van de website uitschrijven.</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 1.67 uren <i class="fa-solid fa-calendar"></i> 10/2/2025</span>
-                    <span class="info">Alexander - School - WEB</span>
-                    <span class="categorie">School - WEB</span>
-                </div>
-            </div>
-            
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">Verder werken GSP portfolio website.</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 1.67 uren <i class="fa-solid fa-calendar"></i> 9/30/2025</span>
-                    <span class="info">Alexander - School - APP</span>
-                    <span class="categorie">School - APP</span>
-                </div>
-            </div>
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">afwerken van het migreren van de Monday.com tijdlijn naar https://www.xentrographics2.be/Monday/projects.php</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 1.67 uren <i class="fa-solid fa-calendar"></i> 9/30/2025</span>
-                    <span class="info">Alexander - School - PROD</span>
-                    <span class="categorie">School - PROD</span>
-                </div>
-            </div>
-            
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">Verderwerken aan het migreren van de Monday.com tijdlijn naar https://www.xentrographics2.be/Monday/projects.php</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 0.25 uren <i class="fa-solid fa-calendar"></i> 9/29/2025</span>
-                    <span class="info">Alexander - Thuis</span>
-                    <span class="categorie">Thuis</span>
-                </div>
-            </div>
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">Verderwerken aan GSP portfolio website, en beginnen met migreren van de Monday.com tijdlijn naar https://www.xentrographics2.be/Monday/projects.php</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 1.83 uren <i class="fa-solid fa-calendar"></i> 9/29/2025</span>
-                    <span class="info">Alexander - School - WEB</span>
-                    <span class="categorie">School - WEB</span>
-                </div>
-            </div>
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">Verderwerken aan GSP portfolio website.</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 0.83 uren <i class="fa-solid fa-calendar"></i> 9/29/2025</span>
-                    <span class="info">Alexander - School - PROD</span>
-                    <span class="categorie">School - PROD</span>
-                </div>
-            </div>
-            
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">Verderwerken aan planning. Toevoegen deadlines, vakantieperioden, taken en subtaken.</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 0.83 uren <i class="fa-solid fa-calendar"></i> 9/9/2025</span>
-                    <span class="info">Alexander - School - PROD</span>
-                    <span class="categorie">School - PROD</span>
-                </div>
-            </div>
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">Verderwerken aan planning. Toevoegen deadlines, vakantieperioden, taken en subtaken.</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 0.83 uren <i class="fa-solid fa-calendar"></i> 9/9/2025</span>
-                    <span class="info">Clément - School - PROD</span>
-                    <span class="categorie">School - PROD</span>
-                </div>
-            </div>
-            <div class="logboek-container">
-                <div class="item">
-                    <div class="action-buttons">
-                        <i class="fa-solid fa-pencil"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                    <span class="titel">Start opstelling planning met tijdlijntool. Individuele voorbereiding, klassikale evaluatie en visuele planning.</span>
-                    <span class="tijd-datum"><i class="fa-solid fa-clock"></i> 1.67 uren <i class="fa-solid fa-calendar"></i> 9/2/2025</span>
-                    <span class="info">Alexander - School - APP</span>
-                    <span class="categorie">School - APP</span>
-                </div>
-            </div>
-            
+            <span class="titel"
+              >Portefolio site verder inorde brengen</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 0.83 uren
+              <i class="fa-solid fa-calendar"></i> 12/1/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - School - WEB</span
+            >
+            <span class="categorie">School - WEB</span>
+          </div>
         </div>
-    </section>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >Visual design van de web applicatie en maken van de database met
+              postcode's</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 1.67 uren
+              <i class="fa-solid fa-calendar"></i> 11/25/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - School - APP</span
+            >
+            <span class="categorie">School - APP</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel">Javascript in de gsp portofolio website.</span>
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 0.58 uren
+              <i class="fa-solid fa-calendar"></i> 11/25/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - School - PROD</span
+            >
+            <span class="categorie">School - PROD</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel">Javascript in de gsp portofolio website.</span>
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 0.83 uren
+              <i class="fa-solid fa-calendar"></i> 11/24/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - School - WEB</span
+            >
+            <span class="categorie">School - WEB</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >Het erd model gemaakt voor de login en het vinden van de foto's
+              op de fileserver.</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 1.00 uren
+              <i class="fa-solid fa-calendar"></i> 11/24/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - Thuis</span
+            >
+            <span class="categorie">Thuis</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel">Javascript in de gsp portofolio website.</span>
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 1.67 uren
+              <i class="fa-solid fa-calendar"></i> 11/20/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - School - WEB</span
+            >
+            <span class="categorie">School - WEB</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >Github in orde maken en 2 aparte paginas maken voor de Logboek op
+              de website.</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 0.50 uren
+              <i class="fa-solid fa-calendar"></i> 11/4/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - School - PROD</span
+            >
+            <span class="categorie">School - PROD</span>
+          </div>
+        </div>
+
+        <!-- Bestaande entries -->
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >Github in orde maken en 2 aparte paginas maken voor de Logboek op
+              de website.</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 0.42 uren
+              <i class="fa-solid fa-calendar"></i> 11/3/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - School - PROD</span
+            >
+            <span class="categorie">School - PROD</span>
+          </div>
+        </div>
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >Grootste deel dummy data vervangen ley de data die we nu al
+              hebben.</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 1.00 uren
+              <i class="fa-solid fa-calendar"></i> 11/2/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - Thuis</span
+            >
+            <span class="categorie">Thuis</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >Uitleg over de wesite afgemaakt en een beetje verder gewerkt aan
+              de portfolio website.</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 1.42 uren
+              <i class="fa-solid fa-calendar"></i> 10/5/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - Thuis</span
+            >
+            <span class="categorie">Thuis</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >Verder werken GSP portfolio website. En het beginnen van de
+              uitleg van de website uitschrijven.</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 1.67 uren
+              <i class="fa-solid fa-calendar"></i> 10/2/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - School - WEB</span
+            >
+            <span class="categorie">School - WEB</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel">Verder werken GSP portfolio website.</span>
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 1.67 uren
+              <i class="fa-solid fa-calendar"></i> 9/30/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - School - APP</span
+            >
+            <span class="categorie">School - APP</span>
+          </div>
+        </div>
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >afwerken van het migreren van de Monday.com tijdlijn naar
+              https://www.xentrographics2.be/Monday/projects.php</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 1.67 uren
+              <i class="fa-solid fa-calendar"></i> 9/30/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - School - PROD</span
+            >
+            <span class="categorie">School - PROD</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >Verderwerken aan het migreren van de Monday.com tijdlijn naar
+              https://www.xentrographics2.be/Monday/projects.php</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 0.25 uren
+              <i class="fa-solid fa-calendar"></i> 9/29/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - Thuis</span
+            >
+            <span class="categorie">Thuis</span>
+          </div>
+        </div>
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >Verderwerken aan GSP portfolio website, en beginnen met migreren
+              van de Monday.com tijdlijn naar
+              https://www.xentrographics2.be/Monday/projects.php</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 1.83 uren
+              <i class="fa-solid fa-calendar"></i> 9/29/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - School - WEB</span
+            >
+            <span class="categorie">School - WEB</span>
+          </div>
+        </div>
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel">Verderwerken aan GSP portfolio website.</span>
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 0.83 uren
+              <i class="fa-solid fa-calendar"></i> 9/29/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - School - PROD</span
+            >
+            <span class="categorie">School - PROD</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >Verderwerken aan planning. Toevoegen deadlines, vakantieperioden,
+              taken en subtaken.</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 0.83 uren
+              <i class="fa-solid fa-calendar"></i> 9/9/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - School - PROD</span
+            >
+            <span class="categorie">School - PROD</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >Start opstelling planning met tijdlijntool. Individuele
+              voorbereiding, klassikale evaluatie en visuele planning.</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 1.67 uren
+              <i class="fa-solid fa-calendar"></i> 9/2/2025</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - School - APP</span
+            >
+            <span class="categorie">School - APP</span>
+          </div>
+        </div>
 
 
-    <section id="tijdlijn" style="display: none;">
-        <div class="home">
-            <iframe src="https://xentrographics2.be/Monday/index.php?view=both&project_id=11&hide_header=true&iframe=true" frameborder="0"></iframe>
-        </div>
+    <section id="tijdlijn" style="display: none">
+      <div class="home">
+        <iframe
+          src="https://xentrographics2.be/Monday/index.php?view=both&project_id=11&hide_header=true&iframe=true"
+          frameborder="0"
+        ></iframe>
+      </div>
     </section>
-    <section id="uren-tracking" style="display: none;">
-        <div class="home">
-            <div class="welkom">
-                <h2>Uren Tracking</h2>
-                <p>Overzicht van gewerkte uren en project voortgang (September - Oktober 2025)</p>
-            </div>
-            <div class="uren-container">
-                <div class="item">
-                    <span class="titel">Totaal Uren</span>
-                    <span class="aantal">30</span>
-                    <span class="tijd">Deze maand</span>
-                </div>
-                <div class="item">
-                    <span class="titel">Alexander's Uren</span>
-                    <span class="aantal">12</span>
-                    <span class="tijd">Deze maand</span>
-                </div>
-                <div class="item">
-                    <span class="titel">Clement's Uren</span>
-                    <span class="aantal">18</span>
-                    <span class="tijd">Deze maand</span>
-                </div>
-                <div class="item">
-                    <span class="titel">Gemiddeld per Dag</span>
-                    <span class="aantal">1.5</span>
-                    <span class="tijd">Deze maand</span>
-                </div>
-                <div class="item">
-                    <span class="titel">Projecten Actief</span>
-                    <span class="aantal">1</span>
-                    <span class="tijd">GSP</span>
-                </div>
-            </div>
-            <div class="uren-entries-container">
-                <p>Recente Uren Entries</p>
-                <div class="item">
-                    <span class="taak">Logboek items uit de volgorde gezet...</span>
-                    <span class="project">Clément</span>
-                    <span class="datum">10/7/2025</span>
-                    <span class="tijd">0.17u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">commentaar css gemaakt</span>
-                    <span class="project">Clément</span>
-                    <span class="datum">10/6/2025</span>
-                    <span class="tijd">3.00u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">sectie projecten en uren-tracking...</span>
-                    <span class="project">Clément</span>
-                    <span class="datum">10/6/2025</span>
-                    <span class="tijd">2.50u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">Uitleg over de wesite afgemaakt...</span>
-                    <span class="project">Alexander</span>
-                    <span class="datum">10/5/2025</span>
-                    <span class="tijd">1.42u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">sectie voortgang gemaakt en afgewerkt...</span>
-                    <span class="project">Clément</span>
-                    <span class="datum">10/3/2025</span>
-                    <span class="tijd">1.33u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">Verder werken GSP portfolio website...</span>
-                    <span class="project">Alexander</span>
-                    <span class="datum">10/2/2025</span>
-                    <span class="tijd">1.67u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">secties verder maken</span>
-                    <span class="project">Clément</span>
-                    <span class="datum">10/2/2025</span>
-                    <span class="tijd">1.90u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">alles van de main branch naar de...</span>
-                    <span class="project">Clément</span>
-                    <span class="datum">10/2/2025</span>
-                    <span class="tijd">0.08u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">Verder werken GSP portfolio website.</span>
-                    <span class="project">Alexander</span>
-                    <span class="datum">9/30/2025</span>
-                    <span class="tijd">1.67u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">afwerken van het migreren van de...</span>
-                    <span class="project">Alexander</span>
-                    <span class="datum">9/30/2025</span>
-                    <span class="tijd">1.67u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-            </div>
+    <section id="uren-tracking" style="display: none">
+      <div class="home">
+        <div class="welkom">
+          <h2>Uren Tracking</h2>
+          <p>
+            Overzicht van gewerkte uren en project voortgang (September -
+            Oktober 2025)
+          </p>
         </div>
+        <div class="uren-container">
+          <div class="item">
+            <span class="titel">Totaal Uren</span>
+            <span class="aantal" id="totaleUren-Uren-Tracking">30</span>
+            <span class="tijd">Deze maand</span>
+          </div>
+          <div class="item">
+            <span class="titel">Alexander's Uren</span>
+            <span class="aantal" id="Uren-Tracking-Alexander">12</span>
+            <span class="tijd">Deze maand</span>
+          </div>
+          <div class="item">
+            <span class="titel">Clement's Uren</span>
+            <span class="aantal" id="Uren-Tracking-Clement">18</span>
+            <span class="tijd">Deze maand</span>
+          </div>
+          <div class="item">
+            <span class="titel">Gemiddeld per Dag</span>
+            <span class="aantal">1</span>
+            <span class="tijd">Deze maand</span>
+          </div>
+          <div class="item">
+            <span class="titel">Projecten Actief</span>
+            <span class="aantal">1</span>
+            <span class="tijd">GSP</span>
+          </div>
+        </div>
+        <div class="uren-entries-container">
+          <p>Recente Uren Entries</p>
+          <div class="item">
+            <span class="taak">Logboek items uit de volgorde gezet...</span>
+            <span class="project">Clément</span>
+            <span class="datum">10/7/2025</span>
+            <span class="tijd">0.17u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">commentaar css gemaakt</span>
+            <span class="project">Clément</span>
+            <span class="datum">10/6/2025</span>
+            <span class="tijd">3.00u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">sectie projecten en uren-tracking...</span>
+            <span class="project">Clément</span>
+            <span class="datum">10/6/2025</span>
+            <span class="tijd">2.50u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">Uitleg over de wesite afgemaakt...</span>
+            <span class="project">Alexander</span>
+            <span class="datum">10/5/2025</span>
+            <span class="tijd">1.42u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">sectie voortgang gemaakt en afgewerkt...</span>
+            <span class="project">Clément</span>
+            <span class="datum">10/3/2025</span>
+            <span class="tijd">1.33u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">Verder werken GSP portfolio website...</span>
+            <span class="project">Alexander</span>
+            <span class="datum">10/2/2025</span>
+            <span class="tijd">1.67u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">secties verder maken</span>
+            <span class="project">Clément</span>
+            <span class="datum">10/2/2025</span>
+            <span class="tijd">1.90u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">alles van de main branch naar de...</span>
+            <span class="project">Clément</span>
+            <span class="datum">10/2/2025</span>
+            <span class="tijd">0.08u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">Verder werken GSP portfolio website.</span>
+            <span class="project">Alexander</span>
+            <span class="datum">9/30/2025</span>
+            <span class="tijd">1.67u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">afwerken van het migreren van de...</span>
+            <span class="project">Alexander</span>
+            <span class="datum">9/30/2025</span>
+            <span class="tijd">1.67u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+        </div>
+      </div>
     </section>
-    <section id="voortgang" style="display: none;">
-        <div class="home">
-            <div class="welkom">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <i class="fa-solid fa-chart-simple"></i><h2>Voortgang</h2>
-                </div>
-                <p>Bekijk de voortgang van je projecten</p>
-            </div>
-            <div class="voortgang-container">
-                <h2 class="titel">Alle Projecten</h2>
-                <p class="info">Status en voortgang van je eindwerken</p>
-                <div class="voortgang-nieuw-project-btn">
-                    <i class="fa-solid fa-plus"></i> Nieuw Project
-                </div>
-                
-                    <div class="item">
-                        <p class="titel">Website Redesign</p>
-                        <p class="categorie">Frontend Development</p>
-                        <p class="deadline"><i class="fa-solid fa-calendar"></i> Deadline: 01 Dec 2025</p>
-                    </div>
-                    <div class="item">
-                        <p class="titel">E-commerce Platform</p>
-                        <p class="categorie">Full-stack Development</p>
-                        <p class="deadline"><i class="fa-solid fa-calendar"></i> Deadline: 02 Feb 2025</p>
-                    </div>
-                    <div class="item">
-                        <p class="titel">Mobile App Design</p>
-                        <p class="categorie">UI/UX Design</p>
-                        <p class="deadline"><i class="fa-solid fa-calendar"></i> Deadline: 03 Mrt 2025</p>
-                    </div>
-                    <div class="item">
-                        <p class="titel">Database Optimization</p>
-                        <p class="categorie">Backend Development</p>
-                        <p class="deadline"><i class="fa-solid fa-calendar"></i> Deadline: 04 Mrt 2025</p>
-                    </div>
-                    <div class="item">
-                        <p class="titel">API Integration</p>
-                        <p class="categorie">Backend Development</p>
-                        <p class="deadline"><i class="fa-solid fa-calendar"></i> Deadline: 07 Mrt 2025</p>
-                    </div>
-                    <div class="item">
-                        <p class="titel">User Authentication</p>
-                        <p class="categorie">Security Implementation</p>
-                        <p class="deadline"><i class="fa-solid fa-calendar"></i> Deadline: 01 Mei 2025</p>
-                    </div>
+    <section id="voortgang" style="display: none">
+      <div class="home">
+        <div class="welkom">
+          <div style="display: flex; align-items: center; gap: 10px">
+            <i class="fa-solid fa-chart-simple"></i>
+            <h2>Voortgang</h2>
+          </div>
+          <p>Bekijk de voortgang van je projecten</p>
+        </div>
+        <div class="voortgang-container">
+          <h2 class="titel">Alle Projecten</h2>
+          <p class="info">Status en voortgang van je eindwerken</p>
+          <div class="voortgang-nieuw-project-btn">
+            <i class="fa-solid fa-plus"></i> Nieuw Project
+          </div>
 
-            </div>
-            <div class="status-container">
-                <div class="voltooid">
-                    <p class="titel">Voltooide Projecten</p>
-                    <p class="aantal" style="color:green;">7</p>
-                </div>
-                <div class="bezig">
-                    <p class="titel">In Uitvoering</p>
-                    <p class="aantal" style="color:blue;">12</p>
-                </div>
-                <div class="onvoltooid">
-                    <p class="titel">Nog Niet Gestart</p>
-                    <p class="aantal" style="color:rgb(82, 82, 82);">4</p>
-                </div>
-            </div>
+          <div class="item">
+            <p class="titel">Website Redesign</p>
+            <p class="categorie">Frontend Development</p>
+            <p class="deadline">
+              <i class="fa-solid fa-calendar"></i> Deadline: 01 Dec 2025
+            </p>
+          </div>
+          <div class="item">
+            <p class="titel">E-commerce Platform</p>
+            <p class="categorie">Full-stack Development</p>
+            <p class="deadline">
+              <i class="fa-solid fa-calendar"></i> Deadline: 02 Feb 2025
+            </p>
+          </div>
+          <div class="item">
+            <p class="titel">Mobile App Design</p>
+            <p class="categorie">UI/UX Design</p>
+            <p class="deadline">
+              <i class="fa-solid fa-calendar"></i> Deadline: 03 Mrt 2025
+            </p>
+          </div>
+          <div class="item">
+            <p class="titel">Database Optimization</p>
+            <p class="categorie">Backend Development</p>
+            <p class="deadline">
+              <i class="fa-solid fa-calendar"></i> Deadline: 04 Mrt 2025
+            </p>
+          </div>
+          <div class="item">
+            <p class="titel">API Integration</p>
+            <p class="categorie">Backend Development</p>
+            <p class="deadline">
+              <i class="fa-solid fa-calendar"></i> Deadline: 07 Mrt 2025
+            </p>
+          </div>
+          <div class="item">
+            <p class="titel">User Authentication</p>
+            <p class="categorie">Security Implementation</p>
+            <p class="deadline">
+              <i class="fa-solid fa-calendar"></i> Deadline: 01 Mei 2025
+            </p>
+          </div>
         </div>
+        <div class="status-container">
+          <div class="voltooid">
+            <p class="titel">Voltooide Projecten</p>
+            <p class="aantal" style="color: green">7</p>
+          </div>
+          <div class="bezig">
+            <p class="titel">In Uitvoering</p>
+            <p class="aantal" style="color: blue">12</p>
+          </div>
+          <div class="onvoltooid">
+            <p class="titel">Nog Niet Gestart</p>
+            <p class="aantal" style="color: rgb(82, 82, 82)">4</p>
+          </div>
+        </div>
+      </div>
     </section>
-    <section id="instellingen" style="display: none;">
-        <div class="home">
-            LEGE PAGINA !
-        </div>
+    <section id="instellingen" style="display: none">
+      <div class="home">LEGE PAGINA !</div>
     </section>
     <script>
-    
-    function showSection(sectionId) {
-        const sections = document.querySelectorAll('section');
-        sections.forEach(sec => sec.style.display = 'none');
+      function showSection(sectionId) {
+        const sections = document.querySelectorAll("section");
+        sections.forEach((sec) => (sec.style.display = "none"));
         const active = document.getElementById(sectionId);
         if (active) {
-            active.style.display = '';
-            // Scroll naar boven bij wissel
-            window.scrollTo({ top: 0, behavior: 'auto' });
+          active.style.display = "";
+          // Scroll naar boven bij wissel
+          window.scrollTo({ top: 0, behavior: "auto" });
         }
-    }
+      }
 
-    
-    document.querySelectorAll('.sidebar div').forEach(div => {
-        div.addEventListener('click', function() {
-            const text = this.textContent.trim().toLowerCase();
-            if (text.includes('dashboard')) {
-                showSection('dashboard');
-            } else if (text.includes('projecten')) {
-                showSection('projecten');
-            }
-            else if (text.includes('logboek c')) {
-                showSection('logboek-clement');
-            } else if (text.includes('logboek a')) {
-                showSection('logboek-brands');
-            
-            } else if (text.includes('tijdlijn')) {
-                showSection('tijdlijn');
-            } else if (text.includes('uren tracking')) {
-                showSection('uren-tracking');
-            } else if (text.includes('voortgang')) {
-                showSection('voortgang');
-            } else if (text.includes('instellingen')) {
-                showSection('instellingen');
-            }
+      document.querySelectorAll(".sidebar div").forEach((div) => {
+        div.addEventListener("click", function () {
+          const text = this.textContent.trim().toLowerCase();
+          if (text.includes("dashboard")) {
+            showSection("dashboard");
+          } else if (text.includes("projecten")) {
+            showSection("projecten");
+          } else if (text.includes("logboek c")) {
+            showSection("logboek-clement");
+          } else if (text.includes("logboek a")) {
+            showSection("logboek-brands");
+          } else if (text.includes("tijdlijn")) {
+            showSection("tijdlijn");
+          } else if (text.includes("uren tracking")) {
+            showSection("uren-tracking");
+          } else if (text.includes("voortgang")) {
+            showSection("voortgang");
+          } else if (text.includes("instellingen")) {
+            showSection("instellingen");
+          }
         });
-    });
+      });
 
-    showSection('dashboard');
+      showSection("dashboard");
     </script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
