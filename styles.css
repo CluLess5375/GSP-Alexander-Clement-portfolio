@@ -14,9 +14,18 @@ maar bij activatie zichtbaar worden !*/
 }
 body {
   /* fonts voor de hele pagina + scrollen vastzetten */
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
+  background: linear-gradient(135deg, #014177 0%, #0F6865 25%, #88C8A7 50%, #035259 75%, #238D8F 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 body::-webkit-scrollbar {
   /* scrollbar van de pagina verstoppen */
@@ -27,7 +36,11 @@ header {
   /* header van de pagina */
   width: 100%;
   height: 80px;
-  background: linear-gradient(#88c8a7, #0f6865);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   display: flex;
   position: fixed;
   z-index: 10;
@@ -37,9 +50,11 @@ header h1 {
   /* header gsp tekst */
   margin-left: 200px;
   align-self: center;
-  color: white;
+  color: rgba(255, 255, 255, 0.95);
   flex-wrap: wrap;
-  text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.55);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }
 section {
   height: 100%;
@@ -48,16 +63,26 @@ header input {
   /* header zoekbalk */
   width: 300px;
   height: 40px;
-  border-radius: 8px;
-  border: 1px solid white;
-  box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
-  color: white;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.95);
   position: absolute;
   right: 300px;
   align-self: center;
-  padding-left: 10px;
+  padding-left: 45px;
   flex-wrap: wrap;
-  background: linear-gradient(#88c8a7, #0f6865);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+header input:focus {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 header input::placeholder {
   color: rgba(255, 255, 255, 0.6);
@@ -91,21 +116,25 @@ header input::placeholder {
 .meldingen,
 .github {
   /* divs van profiel en meldingen op de header */
-  width: 60px;
-  height: 60px;
-  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
   align-self: center;
   display: flex;
   position: absolute;
   justify-content: center;
   align-items: center;
   i {
-    color: white;
-    font-size: 24px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 20px;
     /* icon van de divs */
   }
-  transition-duration: 0.5s;
-  background-color: rgba(0, 0, 0, 0.35);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 .profiel {
   right: 220px;
@@ -122,15 +151,22 @@ header input::placeholder {
 .meldingen:hover,
 .profiel:hover,
 .github:hover {
-  transition-duration: 0.5s;
-  background-color: rgba(0, 0, 0, 0.55);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
   cursor: pointer;
   /* hover voor de twee divs op de header */
 }
 .sidebar {
   width: 220px;
   height: 100vh;
-  background: #0f6865;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 4px 0 32px 0 rgba(31, 38, 135, 0.1);
   position: fixed;
   top: 80px;
   left: 0;
@@ -147,11 +183,11 @@ header input::placeholder {
     padding: 10px;
     margin-top: 10px;
     align-content: center;
-    border-radius: 10px;
-    transition-duration: 0.6s;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background-color: transparent;
-    color: white;
-    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.55);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
 
     i {
       padding-right: 20px;
@@ -160,11 +196,13 @@ header input::placeholder {
   }
   div:hover {
     cursor: pointer;
-    transition-duration: 0.2s;
-    background-color: rgba(0, 0, 0, 0.2);
-    box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
-    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(5px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateX(4px);
     /* hover divs */
   }
 }
@@ -414,121 +452,121 @@ header input::placeholder {
 }
 #dashboard .welkom {
   /* titel en beschrijving voor elke section */
-  padding: 30px;
-  /* From https://css.glass */
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   width: 100%;
   height: auto;
   align-self: center;
   line-height: 40px;
-  color: white;
+  color: rgba(255, 255, 255, 0.95);
+  transition: all 0.3s ease;
   p {
-    color: rgb(170, 170, 170);
+    color: rgba(255, 255, 255, 0.8);
     /* beschrijvingstekst */
   }
 }
 #projecten .welkom {
   /* titel en beschrijving voor elke section */
-  padding: 30px;
-  /* From https://css.glass */
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   width: 100%;
   height: auto;
   align-self: center;
   line-height: 40px;
-  color: white;
+  color: rgba(255, 255, 255, 0.95);
+  transition: all 0.3s ease;
   p {
-    color: rgb(170, 170, 170);
+    color: rgba(255, 255, 255, 0.8);
     /* beschrijvingstekst */
   }
 }
 #logboek-clement .welkom {
   /* titel en beschrijving voor elke section */
-  padding: 30px;
-  /* From https://css.glass */
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   width: 100%;
   height: auto;
   align-self: center;
   line-height: 40px;
-  color: white;
+  color: rgba(255, 255, 255, 0.95);
+  transition: all 0.3s ease;
   p {
-    color: rgb(170, 170, 170);
+    color: rgba(255, 255, 255, 0.8);
     /* beschrijvingstekst */
   }
 }
 #logboek-brands .welkom {
   /* titel en beschrijving voor elke section */
-  padding: 30px;
-  /* From https://css.glass */
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   width: 100%;
   height: auto;
   align-self: center;
   line-height: 40px;
-  color: white;
+  color: rgba(255, 255, 255, 0.95);
+  transition: all 0.3s ease;
   p {
-    color: rgb(170, 170, 170);
+    color: rgba(255, 255, 255, 0.8);
     /* beschrijvingstekst */
   }
 }
 #voortgang .welkom {
   /* titel en beschrijving voor elke section */
-  padding: 30px;
-  /* From https://css.glass */
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   width: 100%;
   height: auto;
   align-self: center;
   line-height: 40px;
-  color: white;
+  color: rgba(255, 255, 255, 0.95);
+  transition: all 0.3s ease;
   p {
-    color: rgb(170, 170, 170);
+    color: rgba(255, 255, 255, 0.8);
     /* beschrijvingstekst */
   }
 }
 #uren-tracking .welkom {
   /* titel en beschrijving voor elke section */
-  padding: 30px;
-  /* From https://css.glass */
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   width: 100%;
   height: auto;
   align-self: center;
   line-height: 40px;
-  color: white;
+  color: rgba(255, 255, 255, 0.95);
+  transition: all 0.3s ease;
   p {
-    color: rgb(170, 170, 170);
+    color: rgba(255, 255, 255, 0.8);
     /* beschrijvingstekst */
   }
 }
@@ -640,15 +678,15 @@ header input::placeholder {
   align-self: center;
   padding: 30px;
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
 
   h2 {
-    color: white;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
     /* "Filters" tekst */
   }
 
@@ -662,15 +700,23 @@ header input::placeholder {
   select {
     height: 40px;
     width: 200px;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 8px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    color: rgba(255, 255, 255, 0.6);
-    box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
     /* enkel input en select van de search div */
+  }
+  
+  .search-items input:focus,
+  select:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
   .search-items input::placeholder {
     color: rgba(255, 255, 255, 0.6);
@@ -696,15 +742,15 @@ header input::placeholder {
   align-self: center;
   padding: 30px;
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
 
   h2 {
-    color: white;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
     /* "Filters" tekst */
   }
 
@@ -718,15 +764,23 @@ header input::placeholder {
   select {
     height: 40px;
     width: 200px;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 8px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    color: rgba(255, 255, 255, 0.6);
-    box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
     /* enkel input en select van de search div */
+  }
+  
+  .search-items input:focus,
+  select:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
   .search-items input::placeholder {
     color: rgba(255, 255, 255, 0.6);
@@ -752,18 +806,17 @@ header input::placeholder {
 .projecten-container .item {
   /* een item van de projecten-container op #dashboard */
   width: 100%;
-  height: 200px; /* From https://css.glass */
+  height: 200px;
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
   margin-top: 30px;
   padding: 30px;
   box-sizing: border-box;
-  color: white;
+  color: rgba(255, 255, 255, 0.95);
   align-items: flex-start;
   align-content: center;
   display: grid;
@@ -771,25 +824,34 @@ header input::placeholder {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   .titel {
-    color: white;
+    color: rgba(255, 255, 255, 0.95);
     font-size: 18px;
+    font-weight: 600;
     /* titeltekst item */
   }
   .aantal {
-    color: white;
+    color: rgba(255, 255, 255, 0.95);
     font-size: 30px;
-    font-weight: bold;
+    font-weight: 700;
     margin-top: 40px;
     /* aantaltekst item */
   }
   .tijd {
-    color: rgb(59, 59, 59);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 14px;
     margin-top: 5px;
     /* tijdtekst item */
   }
+}
+
+.projecten-container .item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 .uren-container .item {
   /* item van de uren-container onder de welkom op #uren-tracking */
@@ -901,13 +963,12 @@ header input::placeholder {
 .deadlines-container {
   /* deadlines-container onder projecten-container op #dashboard */
   min-width: 100%;
-  height: 450px; /* From https://css.glass */
+  height: 450px;
   background: rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
   margin-top: 30px;
   padding: 30px;
@@ -919,32 +980,33 @@ header input::placeholder {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
+  transition: all 0.3s ease;
 
   .item {
     display: grid;
     /* item van deadlines-container op #dashboard */
   }
   .titel {
-    color: white;
-    font-weight: bold;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
     font-size: 30px;
     /* titeltekst deadlines-container */
   }
   .info {
-    color: rgb(49, 49, 49);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 18px;
     margin-top: 10px;
     /* infotekst deadlines-container */
   }
   .item .taak {
-    color: white;
-    font-weight: bold;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
     font-size: 18px;
     margin-top: 50px;
     /* taaktekst deadlines-container */
   }
   .item .tijd {
-    color: rgb(49, 49, 49);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 14px;
     margin-top: 5px;
     /* tijd onder taaktekst */
@@ -954,12 +1016,11 @@ header input::placeholder {
   /* overzicht-container onder deadlines-container op #dashboard */
   width: 100%;
   height: 400px;
-  /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
   margin-top: 30px;
   padding: 30px;
@@ -970,22 +1031,23 @@ header input::placeholder {
   display: grid;
   flex-wrap: wrap;
   flex-direction: column;
+  transition: all 0.3s ease;
 
   .totale-tijd {
-    color: white;
-    font-weight: bold;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 700;
     margin-top: 50px;
     font-size: 20px;
     /* totale tijd tekst */
   }
   .titel {
-    color: white;
-    font-weight: bold;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
     font-size: 30px;
     /* titeltekst */
   }
   .info {
-    color: rgb(49, 49, 49);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 18px;
     margin-top: 10px;
     /* infotekst */
@@ -1048,12 +1110,11 @@ header input::placeholder {
   min-width: 100%;
   height: 200px;
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
   margin-top: 30px;
   padding: 30px;
   box-sizing: border-box;
@@ -1064,6 +1125,15 @@ header input::placeholder {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logboek-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
 
   .action-buttons {
     /* de modify en delete (container) button van een item op #logboek */
@@ -1105,26 +1175,26 @@ header input::placeholder {
     /* display grid voor een item */
   }
   .titel {
-    color: white;
-    font-weight: bold;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
     font-size: 30px;
     /* titeltekst item */
   }
   .info {
-    color: rgb(49, 49, 49);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 18px;
     margin-top: 10px;
     /* infotekst item */
   }
 
   .tijd-datum {
-    color: rgb(49, 49, 49);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 16px;
     margin-top: 5px;
     /* tijd en datum tekst item */
   }
   .categorie {
-    color: rgb(49, 49, 49);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 14px;
     margin-top: 5px;
     /* de categorie van item */
@@ -1143,65 +1213,83 @@ header input::placeholder {
   /* nieuw project button in welkom op #projecten */
   width: 150px;
   height: 40px;
-  color: white;
+  color: rgba(255, 255, 255, 0.95);
   align-items: center;
-  border-radius: 10px;
+  border-radius: 20px;
   text-align: center;
-  font-weight: bold;
+  font-weight: 600;
   justify-content: center;
   right: 50px;
   top: 180px;
   cursor: pointer;
-  transition-duration: 0.5s;
-  background-color: rgb(0, 119, 255);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(0, 122, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
 }
 .voortgang-nieuw-project-btn {
   /* nieuw project button in welkom op #voortgang */
   width: 150px;
   height: 40px;
-  color: white;
+  color: rgba(255, 255, 255, 0.95);
   align-items: center;
-  border-radius: 10px;
+  border-radius: 20px;
   text-align: center;
-  font-weight: bold;
+  font-weight: 600;
   justify-content: center;
   right: 50px;
   line-height: 40px;
   top: 180px;
   cursor: pointer;
-  transition-duration: 0.5s;
-  background-color: rgb(0, 119, 255);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(0, 122, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
 }
 .nieuw-logboek-entry-btn {
   /* nieuwe entry button in welkom op #logboek */
   width: 150px;
   height: 40px;
-  color: white;
+  color: rgba(255, 255, 255, 0.95);
   align-items: center;
-  border-radius: 10px;
+  border-radius: 20px;
   text-align: center;
-  font-weight: bold;
+  font-weight: 600;
   justify-content: center;
   right: 50px;
   top: 180px;
   cursor: pointer;
-  transition-duration: 0.5s;
-  background-color: rgb(0, 119, 255);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(0, 122, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
 }
 .nieuw-project-btn:hover {
   /* hover van de nieuw project button op #projecten */
-  background-color: rgb(0, 90, 194);
-  transition-duration: 0.5s;
+  background: rgba(0, 122, 255, 1);
+  box-shadow: 0 8px 32px rgba(0, 122, 255, 0.4);
+  transform: translateY(-2px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .voortgang-nieuw-project-btn:hover {
   /* hover van de nieuw project button op #voortgang */
-  background-color: rgb(0, 90, 194);
-  transition-duration: 0.5s;
+  background: rgba(0, 122, 255, 1);
+  box-shadow: 0 8px 32px rgba(0, 122, 255, 0.4);
+  transform: translateY(-2px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nieuw-logboek-entry-btn:hover {
   /* hover van de nieuwe entry button op #logboek */
-  background-color: rgb(0, 90, 194);
-  transition-duration: 0.5s;
+  background: rgba(0, 122, 255, 1);
+  box-shadow: 0 8px 32px rgba(0, 122, 255, 0.4);
+  transform: translateY(-2px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project-container {
   /* projecten-container onder de welkom op #projecten */
