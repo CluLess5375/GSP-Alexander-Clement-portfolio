@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>500 - Serverfout</title>
+    <style>
+      body {
+        /* Gebruik dezelfde achtergrond als de andere pagina's */
+        background-image: url(../Images/pexels-steve-29067691.jpg);
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      /* Pas de header iets aan zodat de tekst past zonder sidebar offset */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+      header h1 {
+        margin-left: 150px; /* Iets minder margin dan index.html omdat er geen sidebar is */
+      }
+
+      .container-404 {
+        /* Glassmorphism stijl consistent met index.html */
+        padding: 50px;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+
+        text-align: center;
+        color: white;
+        max-width: 600px;
+        position: relative;
+        z-index: 1;
+        margin-top: 80px; /* Ruimte voor header */
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      .glitch-text {
+        font-family: "Rubik Glitch Pop", cursive; /* Eén van de fonts uit styles.css */
+        font-size: 100px;
+        margin: 0;
+        color: #88c8a7;
+        text-shadow: 4px 4px 0px #0f6865;
+      }
+
+      .message-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 32px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .message-text {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 40px;
+        line-height: 1.6;
+      }
+
+      .terug-knop {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 30px;
+        background: linear-gradient(#88c8a7, #0f6865);
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .terug-knop:hover {
+        transform: scale(1.05) translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+      }
+
+      .icon-container {
+        font-size: 80px;
+        margin-bottom: 20px;
+        color: white;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-icon">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
+      <h1>GSP 2025 - 2026</h1>
+    </header>
+
+    <div class="container-404">
+      <div class="icon-container">
+        <i class="fa-solid fa-server"></i>
+      </div>
+      <h1 class="glitch-text">500</h1>
+      <h2 class="message-title">Code Rood!</h2>
+      <p class="message-text">
+        Er ging iets goed mis op de server. Onze excuses! Alexander & Clement
+        zijn (hopelijk) al op zoek naar de bug.
+      </p>
+      <a href="../index.html" class="terug-knop">
+        <i class="fa-solid fa-house"></i>
+        Terug naar Dashboard
+      </a>
+    </div>
+  </body>
+</html>
