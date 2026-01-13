@@ -2,13 +2,56 @@ let urenAlexander = 12;
 let urenClement = 18;
 
 function laadPagina() {
-  berekenUrenPerLid();
-  totaalUren();
-  telLogboekEntries();
-  berekenGemiddeldeUren();
-  installeerZoekProjecten();
-  installeerZoekLogboek();
+  try { controleerEnHerstelSections(); } catch (e) { console.error('controleerEnHerstelSections fout:', e); }
+  try { berekenUrenPerLid(); } catch (e) { console.error('berekenUrenPerLid fout:', e); }
+  try { totaalUren(); } catch (e) { console.error('totaalUren fout:', e); }
+  try { telLogboekEntries(); } catch (e) { console.error('telLogboekEntries fout:', e); }
+  try { berekenGemiddeldeUren(); } catch (e) { console.error('berekenGemiddeldeUren fout:', e); }
+  try { installeerZoekProjecten(); } catch (e) { console.error('installeerZoekProjecten fout:', e); }
+  try { installeerZoekLogboek(); } catch (e) { console.error('installeerZoekLogboek fout:', e); }
+  try { laatsteEntry(); } catch (e) { console.error('laatsteEntry fout:', e); }
 }
+
+function controleerEnHerstelSections(){
+  const verwachte = [
+    'dashboard','projecten','logboek-clement','logboek-brands',
+    'tijdlijn','uren-tracking','voortgang','instellingen'
+  ];
+
+  const body = document.body;
+  let created = 0;
+  for (const id of verwachte){
+    if (!document.getElementById(id)){
+      // maak een eenvoudige fallback section zodat navigatie niet faalt
+      const sec = document.createElement('section');
+      sec.id = id;
+      sec.style.display = 'none';
+      const home = document.createElement('div');
+      home.className = 'home';
+      const welkom = document.createElement('div');
+      welkom.className = 'welkom';
+      const h2 = document.createElement('h2');
+      h2.textContent = id.replace(/-/g,' ').replace(/\b\w/g, c=>c.toUpperCase());
+      const p = document.createElement('p');
+      p.textContent = 'Automatisch aangemaakte placeholder voor sectie: ' + id;
+      welkom.appendChild(h2);
+      welkom.appendChild(p);
+      home.appendChild(welkom);
+      sec.appendChild(home);
+      body.appendChild(sec);
+      created++;
+      console.warn('Placeholder section aangemaakt voor:', id);
+    }
+  }
+  if (created>0) console.info('Herstelde', created, 'ontbrekende sections');
+}
+
+// Globale foutlogger om stilstaande JS fouten zichtbaar te maken tijdens debugging
+window.addEventListener('error', function (ev) {
+  console.error('Globale fout gedetecteerd:', ev.error || ev.message, ev);
+  // toon een kleine melding zodat de gebruiker weet dat er een fout is
+  try { if (window && window.alert) window.alert('Er is een JavaScript-fout opgetreden. Kijk in de console voor details.'); } catch (e) {}
+});
 
 function totaalUren() {
   urenAlexander =
@@ -17,35 +60,55 @@ function totaalUren() {
     parseFloat(document.getElementById("urenClement").textContent) || 0;
   const totaal = urenAlexander + urenClement;
 
-  const pctA = (urenAlexander / totaal) * 100;
-  const pctC = (urenClement / totaal) * 100;
+  const pctA = totaal > 0 ? (urenAlexander / totaal) * 100 : 0;
+  const pctC = totaal > 0 ? (urenClement / totaal) * 100 : 0;
 
-  document.getElementById("totaleUren-Dashboard").innerText = totaal + "u";
-  document.getElementById("totaleUren-Dashboard-Card").innerText = totaal + "u";
-  document.getElementById("Uren-Tracking-Alexander").innerText =
-    urenAlexander + "u";
-  document.getElementById("Uren-Tracking-Clement").innerText =
-    urenClement + "u";
+  const totaleUrenDashboard = document.getElementById("totaleUren-Dashboard");
+  if (totaleUrenDashboard) totaleUrenDashboard.innerText = totaal + "u";
+  
+  const totaleUrenCard = document.getElementById("totaleUren-Dashboard-Card");
+  if (totaleUrenCard) totaleUrenCard.innerText = totaal + "u";
 
-  document.getElementById("voortgang-clement").innerText =
-    pctC.toFixed(1) + "%";
-  document.getElementById("voortgang-alexander").innerText =
-    pctA.toFixed(1) + "%";
+  // Update uren-tracking section
+  const urenTrackingSection = document.getElementById("uren-tracking");
+  if (urenTrackingSection) {
+    const items = urenTrackingSection.querySelectorAll(".uren-container .item");
+    items.forEach(item => {
+      const titel = item.querySelector(".titel");
+      if (titel) {
+        const aantal = item.querySelector(".aantal");
+        if (aantal) {
+          if (titel.textContent.includes("Totaal Uren")) {
+            aantal.innerText = totaal;
+          } else if (titel.textContent.includes("Alexander")) {
+            aantal.innerText = urenAlexander;
+          } else if (titel.textContent.includes("Clement")) {
+            aantal.innerText = urenClement;
+          }
+        }
+      }
+    });
+  }
 
-  const te = document.getElementById("totaleUren-Uren-Tracking");
-  if (te) te.innerText = totaal + "u";
+  const voortgangClement = document.getElementById("voortgang-clement");
+  if (voortgangClement) voortgangClement.innerText = pctC.toFixed(1) + "%";
+  
+  const voortgangAlexander = document.getElementById("voortgang-alexander");
+  if (voortgangAlexander) voortgangAlexander.innerText = pctA.toFixed(1) + "%";
 }
 
 function telLogboekEntries() {
   const totaal_entries_clement = document.querySelectorAll(
-    "#logboek-item-clement"
+    "#logboek-clement .logboek-container"
   ).length;
   const totaal_entries_alexander = document.querySelectorAll(
-    "#logboek-item-alexander"
+    "#logboek-brands .logboek-container"
   ).length;
 
-  document.getElementById("totaal-Aantal-Entries").innerText =
-    totaal_entries_clement + totaal_entries_alexander;
+  const totaalEntriesEl = document.getElementById("totaal-Aantal-Entries");
+  if (totaalEntriesEl) {
+    totaalEntriesEl.innerText = totaal_entries_clement + totaal_entries_alexander;
+  }
 }
 
 function parseUren(txt) {
@@ -63,14 +126,20 @@ function parseUren(txt) {
 }
 
 function berekenUrenPerLid() {
-  function sumVoor(selector) {
-    const els = document.querySelectorAll(selector);
+  function sumVoor(sectionId, naam) {
+    const containers = document.querySelectorAll(sectionId + " .logboek-container");
     let s = 0;
-    els.forEach((info) => {
-      const item = info.closest(".item");
+    containers.forEach((container) => {
+      const item = container.querySelector(".item");
       if (!item) return;
-      const tijdEl =
-        item.querySelector(".tijd-datum") || item.querySelector(".tijd");
+      
+      // Check if this entry belongs to the right person
+      const infoEl = item.querySelector(".info");
+      if (infoEl && !infoEl.textContent.toLowerCase().includes(naam.toLowerCase())) {
+        return;
+      }
+      
+      const tijdEl = item.querySelector(".tijd-datum") || item.querySelector(".tijd");
       if (!tijdEl) return;
       const v = parseUren(tijdEl.textContent);
       if (!isNaN(v)) s += v;
@@ -78,14 +147,18 @@ function berekenUrenPerLid() {
     return s;
   }
 
-  const sumC = sumVoor("#logboek-item-clement");
-  const sumA = sumVoor("#logboek-item-alexander");
+  const sumC = sumVoor("#logboek-clement", "clément");
+  const sumA = sumVoor("#logboek-brands", "alexander");
   urenClement = Math.round(sumC * 100) / 100;
   urenAlexander = Math.round(sumA * 100) / 100;
+  
   const ec = document.getElementById("urenClement");
   if (ec) ec.innerText = urenClement;
   const ea = document.getElementById("urenAlexander");
   if (ea) ea.innerText = urenAlexander;
+  
+  // Update totaalUren after calculating
+  totaalUren();
 }
 
 function berekenGemiddeldeUren() {
@@ -162,12 +235,16 @@ function installeerZoekProjecten() {
 
 function installeerZoekLogboek() {
   const koppelingen = [
-    { id: "zoek-logboek-clement", section: "#logboek-clement" },
-    { id: "zoek-logboek-alexander", section: "#logboek-brands" },
+    { section: "#logboek-clement" },
+    { section: "#logboek-brands" },
   ];
 
-  koppelingen.forEach(({ id, section }) => {
-    const input = document.getElementById(id);
+  koppelingen.forEach(({ section }) => {
+    const sectionEl = document.querySelector(section);
+    if (!sectionEl) return;
+    
+    // Find the search input within this section
+    const input = sectionEl.querySelector(".logboek-search input[type='search']");
     if (!input) return;
 
     const selectorContainer = section + " .logboek-container";
@@ -184,4 +261,49 @@ function installeerZoekLogboek() {
   });
 }
 
-function laatsteEntry() {}
+function laatsteEntry() {
+  // Find the most recent entry from both logboeken
+  let laatsteDatum = null;
+  let laatsteTekst = "";
+  
+  const alleEntries = document.querySelectorAll("#logboek-clement .logboek-container, #logboek-brands .logboek-container");
+  
+  alleEntries.forEach(container => {
+    const datumEl = container.querySelector(".tijd-datum");
+    if (!datumEl) return;
+    
+    const datumText = datumEl.textContent;
+    // Extract date from text like "0.42 uren 11/3/2025"
+    const dateMatch = datumText.match(/(\d{1,2}\/\d{1,2}\/\d{4})/);
+    if (dateMatch) {
+      const [maand, dag, jaar] = dateMatch[1].split('/').map(Number);
+      const datum = new Date(jaar, maand - 1, dag);
+      
+      if (!laatsteDatum || datum > laatsteDatum) {
+        laatsteDatum = datum;
+        const titelEl = container.querySelector(".titel");
+        if (titelEl) {
+          laatsteTekst = titelEl.textContent.trim();
+        }
+      }
+    }
+  });
+  
+  const laatsteEntryEl = document.getElementById("laatste-entry");
+  if (laatsteEntryEl && laatsteTekst) {
+    const vandaag = new Date();
+    vandaag.setHours(0, 0, 0, 0);
+    if (laatsteDatum && laatsteDatum.getTime() === vandaag.getTime()) {
+      laatsteEntryEl.innerText = "Laatste entry vandaag";
+    } else if (laatsteDatum) {
+      const dagenGeleden = Math.floor((vandaag - laatsteDatum) / (1000 * 60 * 60 * 24));
+      if (dagenGeleden === 1) {
+        laatsteEntryEl.innerText = "Laatste entry gisteren";
+      } else if (dagenGeleden > 1) {
+        laatsteEntryEl.innerText = `Laatste entry ${dagenGeleden} dagen geleden`;
+      } else {
+        laatsteEntryEl.innerText = "Laatste entry vandaag";
+      }
+    }
+  }
+}

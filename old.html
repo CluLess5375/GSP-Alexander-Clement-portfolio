@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
@@ -10,7 +10,7 @@
     />
     <title>GSP '25 - '26</title>
   </head>
-<body onload="laadPagina()">
+  <body onload="laadPagina()">
     <header>
       <div class="header-icon">
         <i class="fa-solid fa-circle-nodes"></i>
@@ -36,42 +36,40 @@
       </div>
     </header>
     <nav>
-        <div class="sidebar">
-            
-                <div onclick="location.href='#dashboard'">
-                    <i class="fa-solid fa-table-list"></i>
-                    Dashboard
-                </div>
-                <div onclick="location.href='#projecten'">
-                    <i class="fa-solid fa-folder-open"></i>
-                    Projecten
-                </div>
-                <div onclick="location.href='#logboek-clement'">
-                    <i class="fa-solid fa-book"></i>
-                    Logboek C
-                </div>
-                <div onclick="location.href='#logboek-brands'">
-                    <i class="fa-solid fa-book"></i>
-                    Logboek A
-                </div>
-                <div onclick="location.href='#tijdlijn'">
-                    <i class="fa-solid fa-bars-staggered"></i>
-                    Tijdlijn
-                </div>
-                <div onclick="location.href='#uren-tracking'">
-                    <i class="fa-solid fa-clock"></i>
-                    Uren Tracking
-                </div>
-                <div onclick="location.href='#voortgang'">
-                    <i class="fa-solid fa-chart-simple"></i>
-                    Voortgang
-                </div>
-                <div onclick="location.href='#instellingen'">
-                    <i class="fa-solid fa-gear"></i>
-                    Instellingen
-                </div>
-            
+      <div class="sidebar">
+        <div onclick="location.href='#dashboard'">
+          <i class="fa-solid fa-table-list"></i>
+          Dashboard
         </div>
+        <div onclick="location.href='#projecten'">
+          <i class="fa-solid fa-folder-open"></i>
+          Projecten
+        </div>
+        <div onclick="location.href='#logboek-clement'">
+          <i class="fa-solid fa-book"></i>
+          Logboek C
+        </div>
+        <div onclick="location.href='#logboek-brands'">
+          <i class="fa-solid fa-book"></i>
+          Logboek A
+        </div>
+        <div onclick="location.href='#tijdlijn'">
+          <i class="fa-solid fa-bars-staggered"></i>
+          Tijdlijn
+        </div>
+        <div onclick="location.href='#uren-tracking'">
+          <i class="fa-solid fa-clock"></i>
+          Uren Tracking
+        </div>
+        <div onclick="location.href='#voortgang'">
+          <i class="fa-solid fa-chart-simple"></i>
+          Voortgang
+        </div>
+        <div onclick="location.href='#instellingen'">
+          <i class="fa-solid fa-gear"></i>
+          Instellingen
+        </div>
+      </div>
     </nav>
     <section id="dashboard" style="display: none">
       <div class="home">
@@ -1065,230 +1063,232 @@
         ></iframe>
       </div>
     </section>
-
-
-    <section id="tijdlijn" style="display: none;">
-        <div class="home">
-            <iframe src="https://xentrographics2.be/Monday/index.php?view=both&project_id=11&hide_header=true&iframe=true" frameborder="0"></iframe>
+    <section id="uren-tracking" style="display: none">
+      <div class="home">
+        <div class="welkom">
+          <h2>Uren Tracking</h2>
+          <p>
+            Overzicht van gewerkte uren en project voortgang (September -
+            Oktober 2025)
+          </p>
         </div>
+        <div class="uren-container">
+          <div class="item">
+            <span class="titel">Totaal Uren</span>
+            <span class="aantal" id="totaleUren-Uren-Tracking">30</span>
+            <span class="tijd">Deze maand</span>
+          </div>
+          <div class="item">
+            <span class="titel">Alexander's Uren</span>
+            <span class="aantal" id="Uren-Tracking-Alexander">12</span>
+            <span class="tijd">Deze maand</span>
+          </div>
+          <div class="item">
+            <span class="titel">Clement's Uren</span>
+            <span class="aantal" id="Uren-Tracking-Clement">18</span>
+            <span class="tijd">Deze maand</span>
+          </div>
+          <div class="item">
+            <span class="titel">Gemiddeld per Dag</span>
+            <span class="aantal">1</span>
+            <span class="tijd">Deze maand</span>
+          </div>
+          <div class="item">
+            <span class="titel">Projecten Actief</span>
+            <span class="aantal">1</span>
+            <span class="tijd">GSP</span>
+          </div>
+        </div>
+        <div class="uren-entries-container">
+          <p>Recente Uren Entries</p>
+          <div class="item">
+            <span class="taak">Logboek items uit de volgorde gezet...</span>
+            <span class="project">Clément</span>
+            <span class="datum">10/7/2025</span>
+            <span class="tijd">0.17u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">commentaar css gemaakt</span>
+            <span class="project">Clément</span>
+            <span class="datum">10/6/2025</span>
+            <span class="tijd">3.00u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">sectie projecten en uren-tracking...</span>
+            <span class="project">Clément</span>
+            <span class="datum">10/6/2025</span>
+            <span class="tijd">2.50u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">Uitleg over de wesite afgemaakt...</span>
+            <span class="project">Alexander</span>
+            <span class="datum">10/5/2025</span>
+            <span class="tijd">1.42u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">sectie voortgang gemaakt en afgewerkt...</span>
+            <span class="project">Clément</span>
+            <span class="datum">10/3/2025</span>
+            <span class="tijd">1.33u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">Verder werken GSP portfolio website...</span>
+            <span class="project">Alexander</span>
+            <span class="datum">10/2/2025</span>
+            <span class="tijd">1.67u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">secties verder maken</span>
+            <span class="project">Clément</span>
+            <span class="datum">10/2/2025</span>
+            <span class="tijd">1.90u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">alles van de main branch naar de...</span>
+            <span class="project">Clément</span>
+            <span class="datum">10/2/2025</span>
+            <span class="tijd">0.08u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">Verder werken GSP portfolio website.</span>
+            <span class="project">Alexander</span>
+            <span class="datum">9/30/2025</span>
+            <span class="tijd">1.67u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+          <div class="item">
+            <span class="taak">afwerken van het migreren van de...</span>
+            <span class="project">Alexander</span>
+            <span class="datum">9/30/2025</span>
+            <span class="tijd">1.67u</span>
+            <span class="status">Goedgekeurd</span>
+          </div>
+        </div>
+      </div>
     </section>
-    <section id="uren-tracking" style="display: none;">
-        <div class="home">
-            <div class="welkom">
-                <h2>Uren Tracking</h2>
-                <p>Overzicht van gewerkte uren en project voortgang (September - Oktober 2025)</p>
-            </div>
-            <div class="uren-container">
-                <div class="item">
-                    <span class="titel">Totaal Uren</span>
-                    <span class="aantal">30</span>
-                    <span class="tijd">Deze maand</span>
-                </div>
-                <div class="item">
-                    <span class="titel">Alexander's Uren</span>
-                    <span class="aantal">12</span>
-                    <span class="tijd">Deze maand</span>
-                </div>
-                <div class="item">
-                    <span class="titel">Clement's Uren</span>
-                    <span class="aantal">18</span>
-                    <span class="tijd">Deze maand</span>
-                </div>
-                <div class="item">
-                    <span class="titel">Gemiddeld per Dag</span>
-                    <span class="aantal">1.5</span>
-                    <span class="tijd">Deze maand</span>
-                </div>
-                <div class="item">
-                    <span class="titel">Projecten Actief</span>
-                    <span class="aantal">1</span>
-                    <span class="tijd">GSP</span>
-                </div>
-            </div>
-            <div class="uren-entries-container">
-                <p>Recente Uren Entries</p>
-                <div class="item">
-                    <span class="taak">Logboek items uit de volgorde gezet...</span>
-                    <span class="project">Clément</span>
-                    <span class="datum">10/7/2025</span>
-                    <span class="tijd">0.17u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">commentaar css gemaakt</span>
-                    <span class="project">Clément</span>
-                    <span class="datum">10/6/2025</span>
-                    <span class="tijd">3.00u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">sectie projecten en uren-tracking...</span>
-                    <span class="project">Clément</span>
-                    <span class="datum">10/6/2025</span>
-                    <span class="tijd">2.50u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">Uitleg over de wesite afgemaakt...</span>
-                    <span class="project">Alexander</span>
-                    <span class="datum">10/5/2025</span>
-                    <span class="tijd">1.42u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">sectie voortgang gemaakt en afgewerkt...</span>
-                    <span class="project">Clément</span>
-                    <span class="datum">10/3/2025</span>
-                    <span class="tijd">1.33u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">Verder werken GSP portfolio website...</span>
-                    <span class="project">Alexander</span>
-                    <span class="datum">10/2/2025</span>
-                    <span class="tijd">1.67u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">secties verder maken</span>
-                    <span class="project">Clément</span>
-                    <span class="datum">10/2/2025</span>
-                    <span class="tijd">1.90u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">alles van de main branch naar de...</span>
-                    <span class="project">Clément</span>
-                    <span class="datum">10/2/2025</span>
-                    <span class="tijd">0.08u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">Verder werken GSP portfolio website.</span>
-                    <span class="project">Alexander</span>
-                    <span class="datum">9/30/2025</span>
-                    <span class="tijd">1.67u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-                <div class="item">
-                    <span class="taak">afwerken van het migreren van de...</span>
-                    <span class="project">Alexander</span>
-                    <span class="datum">9/30/2025</span>
-                    <span class="tijd">1.67u</span>
-                    <span class="status">Goedgekeurd</span>
-                </div>
-            </div>
+    <section id="voortgang" style="display: none">
+      <div class="home">
+        <div class="welkom">
+          <div style="display: flex; align-items: center; gap: 10px">
+            <i class="fa-solid fa-chart-simple"></i>
+            <h2>Voortgang</h2>
+          </div>
+          <p>Bekijk de voortgang van je projecten</p>
         </div>
-    </section>
-    <section id="voortgang" style="display: none;">
-        <div class="home">
-            <div class="welkom">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <i class="fa-solid fa-chart-simple"></i><h2>Voortgang</h2>
-                </div>
-                <p>Bekijk de voortgang van je projecten</p>
-            </div>
-            <div class="voortgang-container">
-                <h2 class="titel">Alle Projecten</h2>
-                <p class="info">Status en voortgang van je eindwerken</p>
-                <div class="voortgang-nieuw-project-btn">
-                    <i class="fa-solid fa-plus"></i> Nieuw Project
-                </div>
-                
-                    <div class="item">
-                        <p class="titel">Website Redesign</p>
-                        <p class="categorie">Frontend Development</p>
-                        <p class="deadline"><i class="fa-solid fa-calendar"></i> Deadline: 01 Dec 2025</p>
-                    </div>
-                    <div class="item">
-                        <p class="titel">E-commerce Platform</p>
-                        <p class="categorie">Full-stack Development</p>
-                        <p class="deadline"><i class="fa-solid fa-calendar"></i> Deadline: 02 Feb 2025</p>
-                    </div>
-                    <div class="item">
-                        <p class="titel">Mobile App Design</p>
-                        <p class="categorie">UI/UX Design</p>
-                        <p class="deadline"><i class="fa-solid fa-calendar"></i> Deadline: 03 Mrt 2025</p>
-                    </div>
-                    <div class="item">
-                        <p class="titel">Database Optimization</p>
-                        <p class="categorie">Backend Development</p>
-                        <p class="deadline"><i class="fa-solid fa-calendar"></i> Deadline: 04 Mrt 2025</p>
-                    </div>
-                    <div class="item">
-                        <p class="titel">API Integration</p>
-                        <p class="categorie">Backend Development</p>
-                        <p class="deadline"><i class="fa-solid fa-calendar"></i> Deadline: 07 Mrt 2025</p>
-                    </div>
-                    <div class="item">
-                        <p class="titel">User Authentication</p>
-                        <p class="categorie">Security Implementation</p>
-                        <p class="deadline"><i class="fa-solid fa-calendar"></i> Deadline: 01 Mei 2025</p>
-                    </div>
+        <div class="voortgang-container">
+          <h2 class="titel">Alle Projecten</h2>
+          <p class="info">Status en voortgang van je eindwerken</p>
+          <div class="voortgang-nieuw-project-btn">
+            <i class="fa-solid fa-plus"></i> Nieuw Project
+          </div>
 
-            </div>
-            <div class="status-container">
-                <div class="voltooid">
-                    <p class="titel">Voltooide Projecten</p>
-                    <p class="aantal" style="color:green;">7</p>
-                </div>
-                <div class="bezig">
-                    <p class="titel">In Uitvoering</p>
-                    <p class="aantal" style="color:blue;">12</p>
-                </div>
-                <div class="onvoltooid">
-                    <p class="titel">Nog Niet Gestart</p>
-                    <p class="aantal" style="color:rgb(82, 82, 82);">4</p>
-                </div>
-            </div>
+          <div class="item">
+            <p class="titel">Website Redesign</p>
+            <p class="categorie">Frontend Development</p>
+            <p class="deadline">
+              <i class="fa-solid fa-calendar"></i> Deadline: 01 Dec 2025
+            </p>
+          </div>
+          <div class="item">
+            <p class="titel">E-commerce Platform</p>
+            <p class="categorie">Full-stack Development</p>
+            <p class="deadline">
+              <i class="fa-solid fa-calendar"></i> Deadline: 02 Feb 2025
+            </p>
+          </div>
+          <div class="item">
+            <p class="titel">Mobile App Design</p>
+            <p class="categorie">UI/UX Design</p>
+            <p class="deadline">
+              <i class="fa-solid fa-calendar"></i> Deadline: 03 Mrt 2025
+            </p>
+          </div>
+          <div class="item">
+            <p class="titel">Database Optimization</p>
+            <p class="categorie">Backend Development</p>
+            <p class="deadline">
+              <i class="fa-solid fa-calendar"></i> Deadline: 04 Mrt 2025
+            </p>
+          </div>
+          <div class="item">
+            <p class="titel">API Integration</p>
+            <p class="categorie">Backend Development</p>
+            <p class="deadline">
+              <i class="fa-solid fa-calendar"></i> Deadline: 07 Mrt 2025
+            </p>
+          </div>
+          <div class="item">
+            <p class="titel">User Authentication</p>
+            <p class="categorie">Security Implementation</p>
+            <p class="deadline">
+              <i class="fa-solid fa-calendar"></i> Deadline: 01 Mei 2025
+            </p>
+          </div>
         </div>
+        <div class="status-container">
+          <div class="voltooid">
+            <p class="titel">Voltooide Projecten</p>
+            <p class="aantal" style="color: green">7</p>
+          </div>
+          <div class="bezig">
+            <p class="titel">In Uitvoering</p>
+            <p class="aantal" style="color: blue">12</p>
+          </div>
+          <div class="onvoltooid">
+            <p class="titel">Nog Niet Gestart</p>
+            <p class="aantal" style="color: rgb(82, 82, 82)">4</p>
+          </div>
+        </div>
+      </div>
     </section>
-    <section id="instellingen" style="display: none;">
-        <div class="home">
-            LEGE PAGINA !
-        </div>
+    <section id="instellingen" style="display: none">
+      <div class="home">LEGE PAGINA !</div>
     </section>
     <script>
-    
-    function showSection(sectionId) {
-        const sections = document.querySelectorAll('section');
-        sections.forEach(sec => sec.style.display = 'none');
+      function showSection(sectionId) {
+        const sections = document.querySelectorAll("section");
+        sections.forEach((sec) => (sec.style.display = "none"));
         const active = document.getElementById(sectionId);
         if (active) {
-            active.style.display = '';
-            // Scroll naar boven bij wissel
-            window.scrollTo({ top: 0, behavior: 'auto' });
+          active.style.display = "";
+          // Scroll naar boven bij wissel
+          window.scrollTo({ top: 0, behavior: "auto" });
         }
-    }
+      }
 
-    
-    document.querySelectorAll('.sidebar div').forEach(div => {
-        div.addEventListener('click', function() {
-            const text = this.textContent.trim().toLowerCase();
-            if (text.includes('dashboard')) {
-                showSection('dashboard');
-            } else if (text.includes('projecten')) {
-                showSection('projecten');
-            }
-            else if (text.includes('logboek c')) {
-                showSection('logboek-clement');
-            } else if (text.includes('logboek a')) {
-                showSection('logboek-brands');
-            
-            } else if (text.includes('tijdlijn')) {
-                showSection('tijdlijn');
-            } else if (text.includes('uren tracking')) {
-                showSection('uren-tracking');
-            } else if (text.includes('voortgang')) {
-                showSection('voortgang');
-            } else if (text.includes('instellingen')) {
-                showSection('instellingen');
-            }
+      document.querySelectorAll(".sidebar div").forEach((div) => {
+        div.addEventListener("click", function () {
+          const text = this.textContent.trim().toLowerCase();
+          if (text.includes("dashboard")) {
+            showSection("dashboard");
+          } else if (text.includes("projecten")) {
+            showSection("projecten");
+          } else if (text.includes("logboek c")) {
+            showSection("logboek-clement");
+          } else if (text.includes("logboek a")) {
+            showSection("logboek-brands");
+          } else if (text.includes("tijdlijn")) {
+            showSection("tijdlijn");
+          } else if (text.includes("uren tracking")) {
+            showSection("uren-tracking");
+          } else if (text.includes("voortgang")) {
+            showSection("voortgang");
+          } else if (text.includes("instellingen")) {
+            showSection("instellingen");
+          }
         });
-    });
+      });
 
-    showSection('dashboard');
+      showSection("dashboard");
     </script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
