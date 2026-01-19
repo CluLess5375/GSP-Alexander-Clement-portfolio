@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
   <head>
     <meta charset="UTF-8" />
@@ -30,42 +30,47 @@
       </div>
       <div
         class="github"
-        onclick="window.open('https://github.com/CluLess5375/GSP-Alexander-Clement-portfolio', '_blank');"
+        onclick="
+          window.open(
+            'https://github.com/CluLess5375/GSP-Alexander-Clement-portfolio',
+            '_blank',
+          )
+        "
       >
         <i class="fa-brands fa-github" style="cursor: pointer"></i>
       </div>
     </header>
     <nav>
       <div class="sidebar">
-        <div onclick="location.href='#dashboard'">
+        <div onclick="location.href = '#dashboard'">
           <i class="fa-solid fa-table-list"></i>
           Dashboard
         </div>
-        <div onclick="location.href='#projecten'">
+        <div onclick="location.href = '#projecten'">
           <i class="fa-solid fa-folder-open"></i>
           Projecten
         </div>
-        <div onclick="location.href='#logboek-clement'">
+        <div onclick="location.href = '#logboek-clement'">
           <i class="fa-solid fa-book"></i>
           Logboek C
         </div>
-        <div onclick="location.href='#logboek-brands'">
+        <div onclick="location.href = '#logboek-brands'">
           <i class="fa-solid fa-book"></i>
           Logboek A
         </div>
-        <div onclick="location.href='#tijdlijn'">
+        <div onclick="location.href = '#tijdlijn'">
           <i class="fa-solid fa-bars-staggered"></i>
           Tijdlijn
         </div>
-        <div onclick="location.href='#uren-tracking'">
+        <div onclick="location.href = '#uren-tracking'">
           <i class="fa-solid fa-clock"></i>
           Uren Tracking
         </div>
-        <div onclick="location.href='#voortgang'">
+        <div onclick="location.href = '#voortgang'">
           <i class="fa-solid fa-chart-simple"></i>
           Voortgang
         </div>
-        <div onclick="location.href='#instellingen'">
+        <div onclick="location.href = '#instellingen'">
           <i class="fa-solid fa-gear"></i>
           Instellingen
         </div>
@@ -94,7 +99,7 @@
           </p>
           <div
             class="nieuw-project-btn"
-            onclick="window.open('ProjectDef.pdf', '_blank');"
+            onclick="window.open('ProjectDef.pdf', '_blank')"
           >
             <i class="fa-solid fa-file-pdf"></i> Open pdf
           </div>
@@ -414,7 +419,8 @@
               <i class="fa-solid fa-trash"></i>
             </div>
             <span class="titel"
-              >Pagina's tijdlijn, voortgang, urentracking en instellingen terug herstellen</span
+              >Pagina's tijdlijn, voortgang, urentracking en instellingen terug
+              herstellen</span
             >
             <span class="tijd-datum"
               ><i class="fa-solid fa-clock"></i> 0.42 uren
@@ -432,9 +438,7 @@
               <i class="fa-solid fa-pencil"></i>
               <i class="fa-solid fa-trash"></i>
             </div>
-            <span class="titel"
-              >Pagina's herstellen en js compleet maken</span
-            >
+            <span class="titel">Pagina's herstellen en js compleet maken</span>
             <span class="tijd-datum"
               ><i class="fa-solid fa-clock"></i> 0.22 uren
               <i class="fa-solid fa-calendar"></i> 1/5/2025</span
@@ -452,7 +456,8 @@
               <i class="fa-solid fa-trash"></i>
             </div>
             <span class="titel"
-              >Zorgen dat de huidige sectie blijft opgeslagen wanneer de pagina herladen wordt</span
+              >Zorgen dat de huidige sectie blijft opgeslagen wanneer de pagina
+              herladen wordt</span
             >
             <span class="tijd-datum"
               ><i class="fa-solid fa-clock"></i> 0.17 uren
@@ -477,9 +482,7 @@
               ><i class="fa-solid fa-clock"></i> 0.17 uren
               <i class="fa-solid fa-calendar"></i> 11/5/2025</span
             >
-            <span class="info" id="logboek-item-clement"
-              >Clément - thuis</span
-            >
+            <span class="info" id="logboek-item-clement">Clément - thuis</span>
             <span class="categorie">Programmeren</span>
           </div>
         </div>
@@ -777,6 +780,87 @@
               <i class="fa-solid fa-trash"></i>
             </div>
             <span class="titel"
+              >verdere aanpassingen aan de front-end van de website.</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 1.67 uren
+              <i class="fa-solid fa-calendar"></i> 1/29/2026</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - School - PROD</span
+            >
+            <span class="categorie">School - PROD</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >Logboek aanvullen en aanvullen op de portefolio site</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 0.67 uren
+              <i class="fa-solid fa-calendar"></i> 1/19/2026</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - School - PROD</span
+            >
+            <span class="categorie">School - PROD</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >Aanpassingen aan de front-end en media querries toevoegen. Ook
+              logboek aanvullen.</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 1.00 uren
+              <i class="fa-solid fa-calendar"></i> 1/18/2026</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - Thuis</span
+            >
+            <span class="categorie">Thuis</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
+              >Front-end gemaakt op https://alexanderb061108.gti-i2ct.be .</span
+            >
+            <span class="tijd-datum"
+              ><i class="fa-solid fa-clock"></i> 1.50 uren
+              <i class="fa-solid fa-calendar"></i> 1/18/2026</span
+            >
+            <span class="info" id="logboek-item-alexander"
+              >Alexander - Thuis</span
+            >
+            <span class="categorie">Thuis</span>
+          </div>
+        </div>
+
+        <div class="logboek-container">
+          <div class="item">
+            <div class="action-buttons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <span class="titel"
               >het aanmaken van error pagina's en de styling aanpassen van de
               pagina's. ook de logboek is aangevuld</span
             >
@@ -857,15 +941,18 @@
               <i class="fa-solid fa-pencil"></i>
               <i class="fa-solid fa-trash"></i>
             </div>
-            <span class="titel">Portefolio site verder inorde brengen</span>
+            <span class="titel"
+              >Visual design van de web applicatie en maken van de database met
+              postcode's</span
+            >
             <span class="tijd-datum"
               ><i class="fa-solid fa-clock"></i> 0.83 uren
               <i class="fa-solid fa-calendar"></i> 12/1/2025</span
             >
             <span class="info" id="logboek-item-alexander"
-              >Alexander - School - WEB</span
+              >Alexander - School - APP</span
             >
-            <span class="categorie">School - WEB</span>
+            <span class="categorie">School - APP</span>
           </div>
         </div>
 
